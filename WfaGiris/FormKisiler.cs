@@ -26,7 +26,7 @@ public partial class FormKisiler : Form
                 Telefon = txtTelefon.Text,
                 Tckn = txtTckn.Text
             };
-            MessageBox.Show(yeniKisi.ToString());
+            //lstKisiler.DisplayMember = "Ad";
             lstKisiler.Items.Add(yeniKisi);
         }
         catch (Exception ex)

@@ -9,21 +9,6 @@ internal class Kisi
     private string _tckn;
     private string _eMail;
     private string _telefon;
-
-    public Kisi(string ad, string soyad, string tckn, string mail, string telefon, DateTime dogumTarihi)
-    {
-        Ad = ad;
-        Soyad = soyad;
-        Tckn = tckn;
-        EMail = mail;
-        Telefon = telefon;
-        DogumTarihi = dogumTarihi;
-    }
-
-    public Kisi()
-    {
-    }
-
     public string Ad
     {
         set
@@ -48,7 +33,6 @@ internal class Kisi
         }
         get => _soyad.ToUpper();
     }
-
     public string Tckn
     {
         set
@@ -87,9 +71,7 @@ internal class Kisi
         }
         get => _eMail;
     }
-
     public DateTime DogumTarihi { get; set; }
-
     public int Yas
     {
         get => DateTime.Now.Year - this.DogumTarihi.Year;
@@ -113,7 +95,6 @@ internal class Kisi
         }
         return true;
     }
-
     private bool HepsiRakamMı(string girdi)
     {
         foreach (char item in girdi)
@@ -125,14 +106,12 @@ internal class Kisi
         }
         return true;
     }
-
-    public void KisiyiEkranaYaz(Kisi kisi)
+    public override string ToString()
     {
-        Console.WriteLine("AD: " + kisi.Ad);
-        Console.WriteLine("SOYAD: " + kisi.Soyad);
-        Console.WriteLine("TCKN: " + kisi.Tckn);
-        Console.WriteLine("EMAIL: " + kisi.EMail);
-        Console.WriteLine("TELEFON: " + kisi.Telefon);
-        Console.WriteLine("YAS: " + kisi.Yas);
+        return $"{this.Ad} {this.Soyad} - {this.Yas}";
     }
 }
+
+//Zar tahmin oyunu form
+//sayı gir okunuşu form
+
