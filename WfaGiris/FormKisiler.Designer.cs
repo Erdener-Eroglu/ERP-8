@@ -66,14 +66,14 @@
             // 
             txtKisiAdi.Location = new Point(144, 31);
             txtKisiAdi.Name = "txtKisiAdi";
-            txtKisiAdi.Size = new Size(231, 27);
+            txtKisiAdi.Size = new Size(186, 27);
             txtKisiAdi.TabIndex = 0;
             // 
             // txtSoyAdi
             // 
             txtSoyAdi.Location = new Point(144, 65);
             txtSoyAdi.Name = "txtSoyAdi";
-            txtSoyAdi.Size = new Size(231, 27);
+            txtSoyAdi.Size = new Size(186, 27);
             txtSoyAdi.TabIndex = 1;
             // 
             // label3
@@ -89,7 +89,7 @@
             // 
             txtTckn.Location = new Point(144, 201);
             txtTckn.Name = "txtTckn";
-            txtTckn.Size = new Size(231, 27);
+            txtTckn.Size = new Size(186, 27);
             txtTckn.TabIndex = 5;
             // 
             // label4
@@ -105,7 +105,7 @@
             // 
             txtEmail.Location = new Point(144, 133);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(231, 27);
+            txtEmail.Size = new Size(186, 27);
             txtEmail.TabIndex = 3;
             // 
             // label5
@@ -121,7 +121,7 @@
             // 
             txtTelefon.Location = new Point(144, 167);
             txtTelefon.Name = "txtTelefon";
-            txtTelefon.Size = new Size(231, 27);
+            txtTelefon.Size = new Size(186, 27);
             txtTelefon.TabIndex = 4;
             // 
             // label6
@@ -135,14 +135,15 @@
             // 
             // dtpDogumTarihi
             // 
+            dtpDogumTarihi.Format = DateTimePickerFormat.Short;
             dtpDogumTarihi.Location = new Point(144, 99);
             dtpDogumTarihi.Name = "dtpDogumTarihi";
-            dtpDogumTarihi.Size = new Size(231, 27);
+            dtpDogumTarihi.Size = new Size(186, 27);
             dtpDogumTarihi.TabIndex = 2;
             // 
             // btnGiris
             // 
-            btnGiris.Location = new Point(236, 244);
+            btnGiris.Location = new Point(191, 234);
             btnGiris.Name = "btnGiris";
             btnGiris.Size = new Size(139, 70);
             btnGiris.TabIndex = 6;
@@ -153,7 +154,7 @@
             // 
             lstKisiler.FormattingEnabled = true;
             lstKisiler.ItemHeight = 20;
-            lstKisiler.Location = new Point(394, 30);
+            lstKisiler.Location = new Point(347, 20);
             lstKisiler.Name = "lstKisiler";
             lstKisiler.Size = new Size(218, 284);
             lstKisiler.TabIndex = 7;
@@ -163,7 +164,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(663, 337);
+            ClientSize = new Size(590, 337);
             Controls.Add(lstKisiler);
             Controls.Add(btnGiris);
             Controls.Add(dtpDogumTarihi);
