@@ -6,7 +6,6 @@ namespace SayininOkunusuForm
         {
             InitializeComponent();
         }
-
         private void btnOku_Click(object sender, EventArgs e)
         {
             SayiOkunus sayi = new();
