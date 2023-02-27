@@ -28,11 +28,19 @@ public partial class FormKisiler : Form
             };
             //lstKisiler.DisplayMember = "Ad";
             lstKisiler.Items.Add(yeniKisi);
+            FormuTemizle();
         }
         catch (Exception ex)
         {
             MessageBox.Show($"Bir hata Oluştu! {ex.Message}");
         }
 
+    }
+    public void FormuTemizle()
+    {
+        foreach (Control item in this.Controls)
+        {
+            //TODO: Formdaki textbox ve dtp  ilk açıldığı hale getirin.
+        }
     }
 }
