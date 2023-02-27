@@ -20,6 +20,10 @@ internal class Kisi
         DogumTarihi = dogumTarihi;
     }
 
+    public Kisi()
+    {
+    }
+
     public string Ad
     {
         set

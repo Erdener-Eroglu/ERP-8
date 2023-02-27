@@ -1,20 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿namespace WfaGiris;
 
-namespace WfaGiris
+public partial class FormKisiler : Form
 {
-    public partial class FormKisiler : Form
+    public FormKisiler()
     {
-        public FormKisiler()
+        InitializeComponent();
+    }
+    private void btnKaydet_Click(object sender, EventArgs e)
+    {
+        try
         {
-            InitializeComponent();
+            //var kisi = new Kisi();
+            //kisi.Ad = txtKisiAdi.Text;
+            //kisi.Soyad = txtSoyAdi.Text;
+            //kisi.DogumTarihi = dtpDogumTarihi.Value;
+            //kisi.EMail = txtEmail.Text;
+            //kisi.Telefon = txtTelefon.Text;
+            //kisi.Tckn = txtTckn.Text;
+            Kisi yeniKisi = new Kisi() //Object Initilizer
+            {
+                Ad = txtKisiAdi.Text,
+                Soyad = txtSoyAdi.Text,
+                DogumTarihi = dtpDogumTarihi.Value,
+                EMail = txtEmail.Text,
+                Telefon = txtTelefon.Text,
+                Tckn = txtTckn.Text
+            };
+            MessageBox.Show(yeniKisi.ToString());
+            lstKisiler.Items.Add(yeniKisi);
         }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Bir hata Oluştu! {ex.Message}");
+        }
+
     }
 }
