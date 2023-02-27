@@ -84,7 +84,6 @@ internal class Kisi
         get => _eMail;
     }
 
-
     public DateTime DogumTarihi { get; set; }
 
     public int Yas
