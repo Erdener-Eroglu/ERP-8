@@ -7,7 +7,7 @@ namespace ZarTahminWindowsForm
             InitializeComponent();
         }
 
-        private Random _rnd = new Random();
+        private readonly Random _rnd = new Random();
         private int _zar1 = 0, _zar2 = 0, _sayi = 0, _sayac = 0;
         private void btnDondur_Click(object sender, EventArgs e)
         {
@@ -20,6 +20,7 @@ namespace ZarTahminWindowsForm
             tmr1.Start();
             lstSonuc.Items.Clear();
             btnDondur.Enabled = false;
+            tmr1.Interval = 1000;
         }
 
         private void tmr1_Tick(object sender, EventArgs e)
@@ -28,15 +29,18 @@ namespace ZarTahminWindowsForm
             _zar1 = _rnd.Next(1, 7);
             _zar2 = _rnd.Next(1, 7);
             lstSonuc.Items.Insert(0, $"{_sayac:00}) {_zar1}-{_zar2}");
+            this.Text = $"{_sayac}. Tahmin";
             btnZar1.Text = _zar1.ToString();
             btnZar2.Text = _zar2.ToString();
-            if(_zar1 == _zar2 && _zar1 == _sayi)
+            if (_zar1 == _zar2 && _zar1 == _sayi)
             {
                 this.Text = $"{_sayac} denemede {_sayi}-{_sayi} tahmini bulundu";
                 btnDondur.Enabled = true;
                 _sayac = 0;
                 tmr1.Stop();
             }
+            var interval = (int)(tmr1.Interval * 0.85);
+            tmr1.Interval = interval <= 1 ? 1 : interval;
         }
     }
 }
