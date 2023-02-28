@@ -6,6 +6,10 @@ namespace SayininOkunusuForm
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblOkunus.Text = string.Empty;
+        }
         private void btnOku_Click(object sender, EventArgs e)
         {
             SayiOkunus sayi = new();
@@ -22,5 +26,7 @@ namespace SayininOkunusuForm
                 MessageBox.Show(ex.Message);
             }
         }
+
+
     }
 }

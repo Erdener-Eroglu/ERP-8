@@ -8,7 +8,10 @@ namespace ZarTahminForm
         {
             InitializeComponent();
         }
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblTebrikler.Text = string.Empty;
+        }
         private void btnZarAt_Click(object sender, EventArgs e)
         {
             GirilenZarDegeri girilenZar = new();
@@ -44,5 +47,7 @@ namespace ZarTahminForm
 
             }
         }
+
+
     }
 }

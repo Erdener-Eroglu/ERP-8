@@ -45,10 +45,13 @@
             // lblOkunus
             // 
             lblOkunus.AutoSize = true;
+            lblOkunus.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblOkunus.ForeColor = Color.RoyalBlue;
             lblOkunus.Location = new Point(12, 196);
             lblOkunus.Name = "lblOkunus";
-            lblOkunus.Size = new Size(0, 20);
+            lblOkunus.Size = new Size(77, 25);
             lblOkunus.TabIndex = 1;
+            lblOkunus.Text = "Okunuş";
             // 
             // btnOku
             // 
@@ -82,7 +85,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(419, 275);
+            BackColor = SystemColors.ControlDarkDark;
+            ClientSize = new Size(578, 275);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnOku);
@@ -90,6 +94,7 @@
             Controls.Add(txtGirilenSayi);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
