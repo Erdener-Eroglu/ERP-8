@@ -31,7 +31,9 @@ public partial class FormKisiler : Form
                     Tckn = txtTckn.Text
                 };
                 //lstKisiler.DisplayMember = "Ad";
-                lstKisiler.Items.Add(yeniKisi);
+                //lstKisiler.Items.Add(yeniKisi);
+                _kisiler.Add(yeniKisi);
+                lstKisiler.DataSource = _kisiler;
                 FormuTemizle();
             }
             catch (Exception ex)
@@ -49,11 +51,15 @@ public partial class FormKisiler : Form
                 _seciliKisi.EMail = txtEmail.Text;
                 _seciliKisi.Telefon = txtTelefon.Text;
                 _seciliKisi.Tckn = txtTckn.Text;
+                _seciliKisi = null;
+                lstKisiler.DataSource = null;
+                lstKisiler.DataSource = _kisiler;
+                lstKisiler.SelectedItem = null;
                 FormuTemizle();
                 btnKaydet.Text = "Kaydet";
-                _seciliKisi = null;
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Bir hata Oluştu! {ex.Message}");
             }
@@ -115,7 +121,10 @@ public partial class FormKisiler : Form
             "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         if (result == DialogResult.Yes)
         {
-            lstKisiler.Items.Remove(_seciliKisi);
+            _kisiler.Remove(_seciliKisi);
+            lstKisiler.DataSource = _kisiler;
+            lstKisiler.DataSource = null;
+            lstKisiler.DataSource = _kisiler;
             FormuTemizle();
         }
     }
