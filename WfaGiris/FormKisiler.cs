@@ -40,7 +40,9 @@ public partial class FormKisiler : Form
     {
         foreach (Control item in this.Controls)
         {
-            //TODO: Formdaki textbox ve dtp  ilk açıldığı hale getirin.
+            if(item is TextBox)
+                item.Text = String.Empty;
         }
+        dtpDogumTarihi.Value = DateTime.Now;
     }
 }

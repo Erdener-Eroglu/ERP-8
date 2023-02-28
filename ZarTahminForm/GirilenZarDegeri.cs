@@ -22,5 +22,7 @@ namespace ZarTahminForm
                 _girilenZar = value;
             }
         }
+
+
     }
 }

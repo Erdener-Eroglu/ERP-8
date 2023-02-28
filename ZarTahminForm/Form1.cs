@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ZarTahminForm
 {
     public partial class Form1 : Form
