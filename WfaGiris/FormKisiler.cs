@@ -134,7 +134,7 @@ public partial class FormKisiler : Form
     private void txtAra_KeyUp(object sender, KeyEventArgs e)
     {
         string arama = txtAra.Text.ToLower();
-        if (arama.Length < 3) return;
+        //if (arama.Length < 3) return;
         List<Kisi> sonuc = new List<Kisi>();
         foreach (var item in _kisiler)
         {
