@@ -28,6 +28,7 @@ partial class FormKisiler
     /// </summary>
     private void InitializeComponent()
     {
+        components = new System.ComponentModel.Container();
         label1 = new Label();
         label2 = new Label();
         txtKisiAdi = new TextBox();
@@ -42,6 +43,10 @@ partial class FormKisiler
         dtpDogumTarihi = new DateTimePicker();
         btnKaydet = new Button();
         lstKisiler = new ListBox();
+        cmsSil = new ContextMenuStrip(components);
+        düzenleToolStripMenuItem = new ToolStripMenuItem();
+        silToolStripMenuItem = new ToolStripMenuItem();
+        cmsSil.SuspendLayout();
         SuspendLayout();
         // 
         // label1
@@ -153,12 +158,35 @@ partial class FormKisiler
         // 
         // lstKisiler
         // 
+        lstKisiler.ContextMenuStrip = cmsSil;
         lstKisiler.FormattingEnabled = true;
         lstKisiler.ItemHeight = 20;
         lstKisiler.Location = new Point(347, 31);
         lstKisiler.Name = "lstKisiler";
         lstKisiler.Size = new Size(218, 264);
         lstKisiler.TabIndex = 7;
+        lstKisiler.SelectedIndexChanged += lstKisiler_SelectedIndexChanged;
+        // 
+        // cmsSil
+        // 
+        cmsSil.ImageScalingSize = new Size(20, 20);
+        cmsSil.Items.AddRange(new ToolStripItem[] { düzenleToolStripMenuItem });
+        cmsSil.Name = "cmsSil";
+        cmsSil.Size = new Size(133, 28);
+        // 
+        // düzenleToolStripMenuItem
+        // 
+        düzenleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { silToolStripMenuItem });
+        düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
+        düzenleToolStripMenuItem.Size = new Size(132, 24);
+        düzenleToolStripMenuItem.Text = "Düzenle";
+        // 
+        // silToolStripMenuItem
+        // 
+        silToolStripMenuItem.Name = "silToolStripMenuItem";
+        silToolStripMenuItem.Size = new Size(224, 26);
+        silToolStripMenuItem.Text = "Sil";
+        silToolStripMenuItem.Click += silToolStripMenuItem_Click;
         // 
         // FormKisiler
         // 
@@ -182,6 +210,7 @@ partial class FormKisiler
         Controls.Add(label1);
         Name = "FormKisiler";
         Text = "FormKisiler";
+        cmsSil.ResumeLayout(false);
         ResumeLayout(false);
         PerformLayout();
     }
@@ -202,4 +231,7 @@ partial class FormKisiler
     private DateTimePicker dtpDogumTarihi;
     private Button btnKaydet;
     private ListBox lstKisiler;
+    private ContextMenuStrip cmsSil;
+    private ToolStripMenuItem düzenleToolStripMenuItem;
+    private ToolStripMenuItem silToolStripMenuItem;
 }
