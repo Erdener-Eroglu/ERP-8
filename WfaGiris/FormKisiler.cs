@@ -1,4 +1,6 @@
-﻿namespace WfaGiris;
+﻿using System.Diagnostics;
+
+namespace WfaGiris;
 
 public partial class FormKisiler : Form
 {
@@ -6,7 +8,7 @@ public partial class FormKisiler : Form
     {
         InitializeComponent();
     }
-    private List<Kisi> _kisiler  = new List<Kisi>();
+    private List<Kisi> _kisiler = new List<Kisi>();
     private Kisi? _seciliKisi;
     private void btnKaydet_Click(object sender, EventArgs e)
     {
@@ -129,4 +131,35 @@ public partial class FormKisiler : Form
         }
     }
 
+    private void txtAra_KeyUp(object sender, KeyEventArgs e)
+    {
+        string arama = txtAra.Text.ToLower();
+        if (arama.Length < 3) return;
+        List<Kisi> sonuc = new List<Kisi>();
+        foreach (var item in _kisiler)
+        {
+            if (item.Ad.ToLower().Contains(arama) || item.Soyad.ToLower().Contains(arama) || item.Tckn.ToLower().StartsWith(arama))
+            {
+                sonuc.Add(item);
+            }
+        }
+
+        //2.Yöntem
+        sonuc = new List<Kisi>();
+        _kisiler.ForEach(item =>
+        {
+            if (item.Ad.ToLower().Contains(arama) || item.Soyad.ToLower().Contains(arama) || item.Tckn.ToLower().StartsWith(arama))
+            {
+                sonuc.Add(item);
+            }
+        });
+        lstKisiler.DataSource = null;
+        lstKisiler.DataSource = sonuc;
+
+        //3.Yöntm(Linq)
+        sonuc = _kisiler
+            .Where(item => item.Ad.ToLower().Contains(arama) || item.Soyad.ToLower().Contains(arama) 
+            || item.Tckn.ToLower().StartsWith(arama)).ToList();
+
+    }
 }

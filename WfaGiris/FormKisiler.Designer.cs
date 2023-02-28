@@ -46,6 +46,7 @@ partial class FormKisiler
         cmsSil = new ContextMenuStrip(components);
         düzenleToolStripMenuItem = new ToolStripMenuItem();
         silToolStripMenuItem = new ToolStripMenuItem();
+        txtAra = new TextBox();
         cmsSil.SuspendLayout();
         SuspendLayout();
         // 
@@ -148,9 +149,9 @@ partial class FormKisiler
         // 
         // btnKaydet
         // 
-        btnKaydet.Location = new Point(191, 234);
+        btnKaydet.Location = new Point(144, 234);
         btnKaydet.Name = "btnKaydet";
-        btnKaydet.Size = new Size(139, 61);
+        btnKaydet.Size = new Size(186, 61);
         btnKaydet.TabIndex = 6;
         btnKaydet.Text = "Kaydet";
         btnKaydet.UseVisualStyleBackColor = true;
@@ -161,9 +162,9 @@ partial class FormKisiler
         lstKisiler.ContextMenuStrip = cmsSil;
         lstKisiler.FormattingEnabled = true;
         lstKisiler.ItemHeight = 20;
-        lstKisiler.Location = new Point(347, 31);
+        lstKisiler.Location = new Point(347, 71);
         lstKisiler.Name = "lstKisiler";
-        lstKisiler.Size = new Size(218, 264);
+        lstKisiler.Size = new Size(218, 224);
         lstKisiler.TabIndex = 7;
         lstKisiler.SelectedIndexChanged += lstKisiler_SelectedIndexChanged;
         // 
@@ -184,9 +185,19 @@ partial class FormKisiler
         // silToolStripMenuItem
         // 
         silToolStripMenuItem.Name = "silToolStripMenuItem";
-        silToolStripMenuItem.Size = new Size(224, 26);
+        silToolStripMenuItem.Size = new Size(108, 26);
         silToolStripMenuItem.Text = "Sil";
         silToolStripMenuItem.Click += silToolStripMenuItem_Click;
+        // 
+        // txtAra
+        // 
+        txtAra.ForeColor = Color.Tomato;
+        txtAra.Location = new Point(347, 31);
+        txtAra.Name = "txtAra";
+        txtAra.PlaceholderText = "Ara...";
+        txtAra.Size = new Size(218, 27);
+        txtAra.TabIndex = 14;
+        txtAra.KeyUp += txtAra_KeyUp;
         // 
         // FormKisiler
         // 
@@ -194,6 +205,7 @@ partial class FormKisiler
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = SystemColors.AppWorkspace;
         ClientSize = new Size(590, 337);
+        Controls.Add(txtAra);
         Controls.Add(lstKisiler);
         Controls.Add(btnKaydet);
         Controls.Add(dtpDogumTarihi);
@@ -234,4 +246,5 @@ partial class FormKisiler
     private ContextMenuStrip cmsSil;
     private ToolStripMenuItem düzenleToolStripMenuItem;
     private ToolStripMenuItem silToolStripMenuItem;
+    private TextBox txtAra;
 }
