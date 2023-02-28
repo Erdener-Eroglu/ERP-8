@@ -53,9 +53,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SayininOkunusuForm", "Sayin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Gün", "6.Gün", "{A0E4AF31-E37C-401B-A6F4-A074B377FF0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SayiOkuyucuFormApp", "SayiOkuyucuFormApp\SayiOkuyucuFormApp.csproj", "{2E045369-5173-4F6C-BC81-437CEEB8E06B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SayiOkuyucuFormApp", "SayiOkuyucuFormApp\SayiOkuyucuFormApp.csproj", "{2E045369-5173-4F6C-BC81-437CEEB8E06B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZarTahminWindowsForm", "ZarTahminWindowsForm\ZarTahminWindowsForm.csproj", "{19571038-D8A7-4D4F-A3AB-5C63C3287056}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZarTahminWindowsForm", "ZarTahminWindowsForm\ZarTahminWindowsForm.csproj", "{19571038-D8A7-4D4F-A3AB-5C63C3287056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesapMakinesiWindowsForm", "HesapMakinesiWindowsForm\HesapMakinesiWindowsForm.csproj", "{28894599-2AFD-4C38-9C6F-9FB26ACB716F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,10 @@ Global
 		{19571038-D8A7-4D4F-A3AB-5C63C3287056}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19571038-D8A7-4D4F-A3AB-5C63C3287056}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19571038-D8A7-4D4F-A3AB-5C63C3287056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28894599-2AFD-4C38-9C6F-9FB26ACB716F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28894599-2AFD-4C38-9C6F-9FB26ACB716F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28894599-2AFD-4C38-9C6F-9FB26ACB716F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28894599-2AFD-4C38-9C6F-9FB26ACB716F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -173,6 +179,7 @@ Global
 		{BD83D7DA-C593-46FF-B601-AEAD3DDF9DF8} = {9ECEFF53-E210-4200-BC71-02A6AA0FB348}
 		{2E045369-5173-4F6C-BC81-437CEEB8E06B} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
 		{19571038-D8A7-4D4F-A3AB-5C63C3287056} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
+		{28894599-2AFD-4C38-9C6F-9FB26ACB716F} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {741FDE33-336B-4F1B-B493-E88430E95A77}
