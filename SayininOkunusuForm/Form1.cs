@@ -12,7 +12,9 @@ namespace SayininOkunusuForm
             try
             {
                 sayi.GirilenSayi = Convert.ToInt32(txtGirilenSayi.Text);
+                lblOkunus.Text = string.Empty;
                 lblOkunus.Text = sayi.OkunusuAl();
+                txtGirilenSayi.Text = string.Empty;
             }
             catch (Exception ex)
             {

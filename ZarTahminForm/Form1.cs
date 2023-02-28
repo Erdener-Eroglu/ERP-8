@@ -15,12 +15,15 @@ namespace ZarTahminForm
             try
             {
                 girilenZar.GirilenZar = Convert.ToInt32(txtGirilenZar.Text);
+                lstZarlar.Items.Clear();
+                ZarAt(girilenZar.GirilenZar);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Bir hata oluþtu! {ex.Message}");
             }
-            ZarAt(girilenZar.GirilenZar);
+
+            txtGirilenZar.Text = String.Empty;
 
         }
         private void ZarAt(int girilenDeger)

@@ -15,7 +15,7 @@ namespace ZarTahminForm
             get => _girilenZar;
             set
             {
-                if (value < 0 || value > 6)
+                if (value < 1 || value > 6)
                 {
                     throw new Exception("Lütfen 1-6 arasında değer giriniz.");
                 }
