@@ -34,7 +34,7 @@
             lblSalise = new Label();
             label1 = new Label();
             label2 = new Label();
-            timer1 = new System.Windows.Forms.Timer(components);
+            tmr1 = new System.Windows.Forms.Timer(components);
             btnBaslat = new Button();
             btnSıfırla = new Button();
             label3 = new Label();
@@ -95,10 +95,10 @@
             label2.TabIndex = 1;
             label2.Text = ":";
             // 
-            // timer1
+            // tmr1
             // 
-            timer1.Interval = 1;
-            timer1.Tick += timer1_Tick;
+            tmr1.Interval = 1;
+            tmr1.Tick += timer1_Tick;
             // 
             // btnBaslat
             // 
@@ -107,7 +107,7 @@
             btnBaslat.Location = new Point(146, 218);
             btnBaslat.Name = "btnBaslat";
             btnBaslat.Size = new Size(96, 68);
-            btnBaslat.TabIndex = 2;
+            btnBaslat.TabIndex = 0;
             btnBaslat.Text = "Baslat";
             btnBaslat.UseVisualStyleBackColor = true;
             btnBaslat.Click += btnBaslat_Click;
@@ -120,7 +120,7 @@
             btnSıfırla.Location = new Point(262, 218);
             btnSıfırla.Name = "btnSıfırla";
             btnSıfırla.Size = new Size(96, 68);
-            btnSıfırla.TabIndex = 3;
+            btnSıfırla.TabIndex = 1;
             btnSıfırla.Text = "Sıfırla";
             btnSıfırla.UseVisualStyleBackColor = true;
             btnSıfırla.Click += btnSıfırla_Click;
@@ -142,7 +142,7 @@
             txtGeriSayıcı.Location = new Point(271, 44);
             txtGeriSayıcı.Name = "txtGeriSayıcı";
             txtGeriSayıcı.Size = new Size(44, 34);
-            txtGeriSayıcı.TabIndex = 5;
+            txtGeriSayıcı.TabIndex = 3;
             txtGeriSayıcı.TextChanged += txtGeriSayıcı_TextChanged;
             txtGeriSayıcı.KeyPress += txtGeriSayıcı_KeyPress;
             // 
@@ -170,7 +170,7 @@
             txtDakika.Location = new Point(141, 44);
             txtDakika.Name = "txtDakika";
             txtDakika.Size = new Size(44, 34);
-            txtDakika.TabIndex = 5;
+            txtDakika.TabIndex = 2;
             txtDakika.TextChanged += txtDakika_TextChanged;
             txtDakika.KeyPress += txtGeriSayıcı_KeyPress;
             // 
@@ -216,7 +216,7 @@
         private Label lblSalise;
         private Label label1;
         private Label label2;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer tmr1;
         private Button btnBaslat;
         private Button btnSıfırla;
         private Label label3;

@@ -26,14 +26,14 @@ public partial class Form1 : Form
         {
             pgbGeriSayým.Value = 0;
             btnBaslat.Text = "Durdur";
-            timer1.Start();
+            tmr1.Start();
             _durdurulduMu = true;
             btnSýfýrla.Enabled = false;
         }
         else
         {
             btnBaslat.Text = "Baþlat";
-            timer1.Stop();
+            tmr1.Stop();
             _durdurulduMu = false;
             btnSýfýrla.Enabled = true;
         }
@@ -76,7 +76,7 @@ public partial class Form1 : Form
             txtGeriSayýcý.Enabled = false;
             txtDakika.Enabled = false;
             _pgbDeger += timeElapsed.TotalMilliseconds;
-            pgbGeriSayým.Value = (int)((_pgbDeger * 100) / (toplamMs + 15 + timeElapsed.TotalMilliseconds));
+            pgbGeriSayým.Value = (int)((_pgbDeger * 100) / (toplamMs + 20 + timeElapsed.TotalMilliseconds));
             _salise = _salise - (timeElapsed.TotalMilliseconds);
             lblSalise.Text = _salise.ToString("000");
             if (_salise < 0)
@@ -94,7 +94,7 @@ public partial class Form1 : Form
             }
             if (_saniye <= -1 && _dakika <= 0)
             {
-                timer1.Stop();
+                tmr1.Stop();
                 btnSýfýrla_Click(btnSýfýrla, new EventArgs());
                 MessageBox.Show("Geri Sayim Bitti", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _geriSayimMi = false;
@@ -105,7 +105,7 @@ public partial class Form1 : Form
 
     private void btnSýfýrla_Click(object sender, EventArgs e)
     {
-        timer1.Stop();
+        tmr1.Stop();
         _saniye = 0;
         _salise = 0;
         _dakika = 0;
