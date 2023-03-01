@@ -63,7 +63,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kronometre", "Kronometre\Kr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.Gün", "7.Gün", "{9D29F221-7BED-4021-AFE0-7D5C67CD04C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KronometreForm", "KronometreForm\KronometreForm.csproj", "{D162E470-198E-4547-9081-ACFD07DE5689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KronometreForm", "KronometreForm\KronometreForm.csproj", "{D162E470-198E-4547-9081-ACFD07DE5689}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.Gün", "8.Gün", "{D359B128-62C3-487C-A047-518F8B49F17A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
