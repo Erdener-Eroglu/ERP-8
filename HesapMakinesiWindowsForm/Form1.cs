@@ -88,8 +88,8 @@ namespace HesapMakinesiWindowsForm
             }
             if (e.KeyChar == '+')
                 islemButonlari(btnArti, new EventArgs());
-            if (e.KeyChar == (char)Keys.Enter)
-                islemButonlari(btnEsittir, new EventArgs());
+            if (e.KeyChar == (char)13)
+                btnEsittir_Click(btnEsittir, new EventArgs());
             if (e.KeyChar == '-')
                 islemButonlari(btnEksi, new EventArgs());
             if (e.KeyChar == '*')

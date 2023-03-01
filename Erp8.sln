@@ -57,7 +57,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SayiOkuyucuFormApp", "SayiO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZarTahminWindowsForm", "ZarTahminWindowsForm\ZarTahminWindowsForm.csproj", "{19571038-D8A7-4D4F-A3AB-5C63C3287056}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HesapMakinesiWindowsForm", "HesapMakinesiWindowsForm\HesapMakinesiWindowsForm.csproj", "{28894599-2AFD-4C38-9C6F-9FB26ACB716F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HesapMakinesiWindowsForm", "HesapMakinesiWindowsForm\HesapMakinesiWindowsForm.csproj", "{28894599-2AFD-4C38-9C6F-9FB26ACB716F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kronometre", "Kronometre\Kronometre.csproj", "{A65C907C-916D-4EF6-8754-6E171504832D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{28894599-2AFD-4C38-9C6F-9FB26ACB716F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28894599-2AFD-4C38-9C6F-9FB26ACB716F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28894599-2AFD-4C38-9C6F-9FB26ACB716F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65C907C-916D-4EF6-8754-6E171504832D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65C907C-916D-4EF6-8754-6E171504832D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65C907C-916D-4EF6-8754-6E171504832D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65C907C-916D-4EF6-8754-6E171504832D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,6 +186,7 @@ Global
 		{2E045369-5173-4F6C-BC81-437CEEB8E06B} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
 		{19571038-D8A7-4D4F-A3AB-5C63C3287056} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
 		{28894599-2AFD-4C38-9C6F-9FB26ACB716F} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
+		{A65C907C-916D-4EF6-8754-6E171504832D} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {741FDE33-336B-4F1B-B493-E88430E95A77}
