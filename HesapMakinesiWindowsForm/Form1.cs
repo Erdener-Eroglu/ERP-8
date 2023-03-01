@@ -30,7 +30,6 @@ namespace HesapMakinesiWindowsForm
             Button btn = (Button)sender;
             string yeniOpt = btn.Text;
 
-            //önceki operatör bilgisine ihtiyaç var.
             //if (txtEkran.Text.Length == 0) return;
             switch (_islem)
             {
