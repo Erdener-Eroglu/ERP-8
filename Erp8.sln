@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KronometreForm", "Kronometr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.Gün", "8.Gün", "{D359B128-62C3-487C-A047-518F8B49F17A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandevuSistemiForm", "RandevuSistemiForm\RandevuSistemiForm.csproj", "{A8AA4B40-C2DB-4011-9D56-C12B206A36AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +171,10 @@ Global
 		{D162E470-198E-4547-9081-ACFD07DE5689}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D162E470-198E-4547-9081-ACFD07DE5689}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D162E470-198E-4547-9081-ACFD07DE5689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8AA4B40-C2DB-4011-9D56-C12B206A36AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8AA4B40-C2DB-4011-9D56-C12B206A36AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8AA4B40-C2DB-4011-9D56-C12B206A36AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8AA4B40-C2DB-4011-9D56-C12B206A36AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +204,7 @@ Global
 		{28894599-2AFD-4C38-9C6F-9FB26ACB716F} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
 		{A65C907C-916D-4EF6-8754-6E171504832D} = {A0E4AF31-E37C-401B-A6F4-A074B377FF0F}
 		{D162E470-198E-4547-9081-ACFD07DE5689} = {9D29F221-7BED-4021-AFE0-7D5C67CD04C9}
+		{A8AA4B40-C2DB-4011-9D56-C12B206A36AC} = {D359B128-62C3-487C-A047-518F8B49F17A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {741FDE33-336B-4F1B-B493-E88430E95A77}
