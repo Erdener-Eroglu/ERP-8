@@ -8,13 +8,9 @@ namespace HesapMakinesiWindowsForm
             label1.Text = string.Empty;
             txtEkran.Text = "0";
         }
-
         double _sonuc;
         string _islem = "";
         bool islemYapildiMi = false;
-
-
-
         private void rakamButonlari(object sender, EventArgs e)
         {
             if (txtEkran.Text == "0" || islemYapildiMi)
@@ -29,7 +25,6 @@ namespace HesapMakinesiWindowsForm
         {
             Button btn = (Button)sender;
             string yeniOpt = btn.Text;
-
             //if (txtEkran.Text.Length == 0) return;
             switch (_islem)
             {
@@ -111,8 +106,5 @@ namespace HesapMakinesiWindowsForm
                 e.Handled = true;
             }
         }
-
-
     }
-
 }
