@@ -113,6 +113,7 @@
             // 
             // cmbSaniye
             // 
+            cmbSaniye.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSaniye.FormattingEnabled = true;
             cmbSaniye.Location = new Point(165, 26);
             cmbSaniye.Name = "cmbSaniye";
@@ -121,6 +122,7 @@
             // 
             // cmbDakika
             // 
+            cmbDakika.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDakika.FormattingEnabled = true;
             cmbDakika.Location = new Point(95, 26);
             cmbDakika.Name = "cmbDakika";
@@ -129,6 +131,7 @@
             // 
             // cmbSaat
             // 
+            cmbSaat.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSaat.FormattingEnabled = true;
             cmbSaat.Location = new Point(25, 26);
             cmbSaat.Name = "cmbSaat";

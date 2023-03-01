@@ -7,7 +7,7 @@ namespace KronometreForm
             InitializeComponent();
         }
         bool _calisiyorMu = false;
-        DateTime _oncekiZaman, _sonrakiZaman, _kronometre = new DateTime();
+        DateTime _oncekiZaman, _sonrakiZaman, _kronometre = new DateTime(), _hedefZaman;
         private void btnBaslatDurdur_Click(object sender, EventArgs e)
         {
             _calisiyorMu = !_calisiyorMu;
@@ -15,7 +15,10 @@ namespace KronometreForm
             if (_calisiyorMu)
             {
                 if (cbGeriSayim.Checked)
+                {
                     _kronometre = new DateTime(1, 1, 1, cmbSaat.SelectedIndex, cmbDakika.SelectedIndex, cmbSaniye.SelectedIndex);
+                    _hedefZaman = _kronometre;
+                }
                 else
                 {
                     _kronometre = new();
@@ -26,6 +29,7 @@ namespace KronometreForm
                 btnBaslatDurdur.FlatStyle = FlatStyle.Flat;
                 btnBaslatDurdur.BackColor = Color.Chartreuse;
                 btnSifirla.Enabled = false;
+
             }
             else
             {
@@ -45,7 +49,22 @@ namespace KronometreForm
             TimeSpan fark = _oncekiZaman - _sonrakiZaman;
             if (cbGeriSayim.Checked)
             {
-                _kronometre = _kronometre.AddMilliseconds(fark.TotalMilliseconds * -1);
+                try
+                {
+                    _kronometre = _kronometre.AddMilliseconds(fark.TotalMilliseconds * -1);
+                    var hedef = _hedefZaman - new DateTime();
+                    var fark2 = _hedefZaman - _kronometre;
+                    var sonuc = (int)(fark2.TotalMilliseconds / hedef.TotalMilliseconds * 100);
+                    pbKalanSure.Value = sonuc;
+                }
+                catch
+                {
+                    pbKalanSure.Value = 100;
+                    _kronometre = new DateTime();
+                    tmr1.Stop();
+                    btnBaslatDurdur.PerformClick();
+                }
+
             }
             else
             {
@@ -59,6 +78,7 @@ namespace KronometreForm
         {
             _kronometre = new DateTime();
             lblEkran.Text = _kronometre.ToString("mm:ss:fff");
+            pbKalanSure.Value = 0;
         }
 
         private void cbGeriSayim_CheckedChanged(object sender, EventArgs e)
@@ -68,7 +88,7 @@ namespace KronometreForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i <= 60; i++)
+            for (int i = 0; i <= 59; i++)
             {
                 cmbSaniye.Items.Add(i);
                 cmbDakika.Items.Add(i);
