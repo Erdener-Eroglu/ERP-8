@@ -10,7 +10,7 @@ namespace HesapMakinesiWindowsForm
         }
 
         double _sonuc;
-        string _islem;
+        string _islem = "";
         bool islemYapildiMi = false;
 
 
@@ -36,7 +36,15 @@ namespace HesapMakinesiWindowsForm
             {
                 case "+": txtEkran.Text = (_sonuc + Double.Parse(txtEkran.Text)).ToString(); break;
                 case "-": txtEkran.Text = (_sonuc - Double.Parse(txtEkran.Text)).ToString(); break;
-                case "/": txtEkran.Text = (_sonuc / Double.Parse(txtEkran.Text)).ToString(); break;
+                case "/":
+                    if (Double.Parse(txtEkran.Text) == 0)
+                    {
+                        MessageBox.Show("0'a bölünemez");
+                        btnReset_Click(btnReset, new EventArgs());
+                        return;
+                    }
+                    else txtEkran.Text = (_sonuc / Double.Parse(txtEkran.Text)).ToString();
+                    break;
                 case "*": txtEkran.Text = (_sonuc * Double.Parse(txtEkran.Text)).ToString(); break;
                 default: break;
             }
@@ -55,14 +63,17 @@ namespace HesapMakinesiWindowsForm
             {
                 case "+": txtEkran.Text = (_sonuc + Double.Parse(txtEkran.Text)).ToString(); break;
                 case "-": txtEkran.Text = (_sonuc - Double.Parse(txtEkran.Text)).ToString(); break;
-                case "/": txtEkran.Text = (_sonuc / Double.Parse(txtEkran.Text)).ToString(); break;
+                case "/":
+                    if (Double.Parse(txtEkran.Text) == 0) MessageBox.Show("0'a bölünemez");
+                    else txtEkran.Text = (_sonuc / Double.Parse(txtEkran.Text)).ToString();
+                    break;
                 case "*": txtEkran.Text = (_sonuc * Double.Parse(txtEkran.Text)).ToString(); break;
                 default: break;
             }
             _sonuc = Double.Parse(txtEkran.Text);
 
             txtEkran.Text = _sonuc.ToString();
-            _sonuc = 0; 
+            _sonuc = 0;
             _islem = "";
         }
 
@@ -102,10 +113,7 @@ namespace HesapMakinesiWindowsForm
             }
         }
 
-        private void txtEkran_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 
 }

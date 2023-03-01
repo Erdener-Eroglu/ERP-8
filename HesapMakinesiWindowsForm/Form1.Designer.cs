@@ -218,7 +218,6 @@
             txtEkran.TabIndex = 0;
             txtEkran.Text = "0";
             txtEkran.TextAlign = HorizontalAlignment.Right;
-            txtEkran.TextChanged += txtEkran_TextChanged;
             txtEkran.KeyPress += txtEkran_KeyPress;
             // 
             // label1
