@@ -8,8 +8,6 @@ namespace RandevuSistemiForm
         {
             InitializeComponent();
         }
-
-
         private void btnUret_Click(object sender, EventArgs e)
         {
             flp1.Controls.Clear();
@@ -32,7 +30,6 @@ namespace RandevuSistemiForm
                 }
             }
         }
-
         private Button ButonUret(string btnText)
         {
             Button btn = new Button()
@@ -45,7 +42,6 @@ namespace RandevuSistemiForm
             btn.Click += BtnMesaSaat_Click;
             return btn;
         }
-
         private void BtnMesaSaat_Click(object? sender, EventArgs e)
         {
             Button basilanButon = (Button)sender;
