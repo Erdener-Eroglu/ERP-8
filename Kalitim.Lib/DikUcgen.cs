@@ -4,7 +4,6 @@ public sealed class DikUcgen : Dikdortgen //DikUçgen sınıfndan daha fazla kal
 {
     public DikUcgen()
     {
-        
     }
     public DikUcgen(double x, double y) : base(x, y)
     {

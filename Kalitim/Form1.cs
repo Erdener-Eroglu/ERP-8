@@ -22,11 +22,18 @@ namespace Kalitim
             };
 
             this.Text = $"Dikdortgenin Alaný: {yeniDikdortgen.AlanHesapla()}";
+            Sekil ucgen = new DikUcgen(6,8);
+
 
             sekiller.Add(yeniKare);
             sekiller.Add(yeniDikdortgen);
+            sekiller.Add(ucgen);
             //sekiller.Add(yeniSekil);
-
+            //Görünüþleri ayný çalýþma biçimleri farklýysa polymorphism
+            foreach (Sekil item in sekiller)
+            {
+                Console.WriteLine(item.CevreHesapla());
+            }
         }
     }
 }
