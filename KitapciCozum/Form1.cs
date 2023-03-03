@@ -25,7 +25,6 @@ namespace KitapciCozum
             yazar.DogumTarihi = new DateTime(1980, 1, 1);
 
             yeniKitap.Yazar = yazar;
-
             //yazar.Urunler = new List<Urun>() { yeniKitap };
             yazar.Urunler.Add(yeniKitap);
 
