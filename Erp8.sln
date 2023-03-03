@@ -83,9 +83,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kitapci", "Kitapci\Kitapci.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kitapci.Lib", "Kitapci.Lib\Kitapci.Lib.csproj", "{3BB26E49-B8DC-4E8A-B528-12B08AC6D5B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitapciCozum", "KitapciCozum\KitapciCozum.csproj", "{84783CC7-4E67-4745-8039-FBA3888D0F94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitapciCozum", "KitapciCozum\KitapciCozum.csproj", "{84783CC7-4E67-4745-8039-FBA3888D0F94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitapciCozum.Lib", "KitapciCozum.Lib\KitapciCozum.Lib.csproj", "{ED197209-846C-4010-AB89-2458B03DD9C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitapciCozum.Lib", "KitapciCozum.Lib\KitapciCozum.Lib.csproj", "{ED197209-846C-4010-AB89-2458B03DD9C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AracKiralama", "AracKiralama\AracKiralama.csproj", "{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AracKiralama.Lib", "AracKiralama.Lib\AracKiralama.Lib.csproj", "{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -221,6 +225,14 @@ Global
 		{ED197209-846C-4010-AB89-2458B03DD9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED197209-846C-4010-AB89-2458B03DD9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED197209-846C-4010-AB89-2458B03DD9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -258,6 +270,8 @@ Global
 		{3BB26E49-B8DC-4E8A-B528-12B08AC6D5B7} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
 		{84783CC7-4E67-4745-8039-FBA3888D0F94} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
 		{ED197209-846C-4010-AB89-2458B03DD9C9} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
+		{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
+		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {741FDE33-336B-4F1B-B493-E88430E95A77}
