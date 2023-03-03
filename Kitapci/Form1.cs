@@ -11,9 +11,12 @@ namespace Kitapci
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Kitap kitap = new Kitap(120,50,"erde");
-            Hesapla.IndirimHesapla(kitap, 50);
-            this.Text = kitap.Fiyat.ToString();
+            Urun kitap = new Kitap(120,50,"erde");
+            Urun plak = new Plak(200, 20, "dsaf");
+            Sepet sepet1 = new Sepet();
+            sepet1.SepeteUrunEkle(plak,kitap);
+            sepet1.SepettekiUrunleriTopla();
+            this.Text = sepet1.ToplamFiyat.ToString();
         }
     }
 }

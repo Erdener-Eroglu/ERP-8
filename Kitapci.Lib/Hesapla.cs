@@ -23,5 +23,7 @@ namespace Kitapci.Lib
             double indirimMiktarı = (urun.Fiyat * indirimYuzdesi) / 100;
             urun.Fiyat -= indirimMiktarı;
         }
+
+
     }
 }
