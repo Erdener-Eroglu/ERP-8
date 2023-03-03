@@ -32,14 +32,4 @@ namespace AracKiralama.Lib
         }
 
     }
-
-    public class Araba : Arac
-    {
-        public double MotorHacmi { get; set; }
-    }
-
-    public class Motor : Arac
-    {
-        public int Cc { get; set; }
-    }
 }
