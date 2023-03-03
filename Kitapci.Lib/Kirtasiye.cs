@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kitapci.Lib
 {
-    public class Kırtasiye : Urun
+    public class Kirtasiye : Urun
     {
-        public Kırtasiye(double fiyat, int stok, string urunAdi) : base(fiyat, stok, urunAdi)
+        public Kirtasiye(double fiyat, int stok, string urunAdi) : base(fiyat, stok, urunAdi)
         {
 
         }
