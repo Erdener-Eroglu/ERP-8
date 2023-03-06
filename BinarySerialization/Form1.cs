@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using Newtonsoft.Json;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace BinarySerialization
@@ -192,11 +193,11 @@ namespace BinarySerialization
             dosyaAc.Filter = "XML Dosyalar(*xml)|*xml";
             dosyaAc.FileName = "Kişiler.xml";
             dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            if(dosyaAc.ShowDialog() == DialogResult.OK)
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
             {
-                XmlSerializer serializer = new XmlSerializer (typeof(List<Kisi>));
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
                 XmlReader textReader = new XmlTextReader(dosyaAc.FileName);
-                if(serializer.CanDeserialize(textReader)) 
+                if (serializer.CanDeserialize(textReader))
                 {
                     _kisiler = serializer.Deserialize(textReader) as List<Kisi>;
                     MessageBox.Show($"{_kisiler.Count} kisi sisteme başarıyla eklendi");
@@ -207,6 +208,40 @@ namespace BinarySerialization
                 {
                     MessageBox.Show("Lütfen doğru xml dosyasını seçin");
                 }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Kişileri JSON olarak kaydet";
+            dosyaKaydet.Filter = "JSON Dosyalar(*json)|*json";
+            dosyaKaydet.FileName = "Kişiler.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject(_kisiler));
+                writer.Close();
+                writer.Dispose();
+            }
+        }
+
+        private void içeriAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Kişileri JSON olarak kaydet";
+            dosyaAc.Filter = "Json Dosyalar(*json)|*json";
+            dosyaAc.FileName = "Kişiler.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                StreamReader reader = new StreamReader(dosya);
+                string dosyaIcerigi = reader.ReadToEnd();
+                // _kisiler = JsonConvert.DeserializeObject(dosyaIcerigi) as List<Kisi>;
+                _kisiler = JsonConvert.DeserializeObject<List<Kisi>>(dosyaIcerigi);
+                lstKisiler.DataSource = null;
+                lstKisiler.DataSource = _kisiler;
             }
         }
     }
