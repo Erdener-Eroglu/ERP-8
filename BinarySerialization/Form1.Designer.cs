@@ -50,15 +50,21 @@
             pbAvatar = new PictureBox();
             label7 = new Label();
             dosyaAc = new OpenFileDialog();
+            menuStrip1 = new MenuStrip();
+            dosyaİşlemleriToolStripMenuItem = new ToolStripMenuItem();
+            xMLToolStripMenuItem = new ToolStripMenuItem();
+            dışarıAktarToolStripMenuItem = new ToolStripMenuItem();
+            içeriAktarToolStripMenuItem = new ToolStripMenuItem();
             cmsSil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAvatar).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // txtAra
             // 
             txtAra.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAra.ForeColor = Color.Tomato;
-            txtAra.Location = new Point(288, 17);
+            txtAra.Location = new Point(279, 36);
             txtAra.Margin = new Padding(3, 4, 3, 4);
             txtAra.Name = "txtAra";
             txtAra.PlaceholderText = "Ara";
@@ -69,7 +75,7 @@
             // dtpDogumTarihi
             // 
             dtpDogumTarihi.Format = DateTimePickerFormat.Short;
-            dtpDogumTarihi.Location = new Point(105, 85);
+            dtpDogumTarihi.Location = new Point(98, 105);
             dtpDogumTarihi.Margin = new Padding(3, 4, 3, 4);
             dtpDogumTarihi.Name = "dtpDogumTarihi";
             dtpDogumTarihi.Size = new Size(175, 27);
@@ -80,7 +86,7 @@
             lstKisiler.ContextMenuStrip = cmsSil;
             lstKisiler.FormattingEnabled = true;
             lstKisiler.ItemHeight = 20;
-            lstKisiler.Location = new Point(288, 56);
+            lstKisiler.Location = new Point(281, 76);
             lstKisiler.Margin = new Padding(3, 4, 3, 4);
             lstKisiler.Name = "lstKisiler";
             lstKisiler.Size = new Size(175, 384);
@@ -110,7 +116,7 @@
             // 
             // btnKaydet
             // 
-            btnKaydet.Location = new Point(105, 372);
+            btnKaydet.Location = new Point(98, 392);
             btnKaydet.Margin = new Padding(3, 4, 3, 4);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(176, 69);
@@ -121,7 +127,7 @@
             // 
             // txtTelefon
             // 
-            txtTelefon.Location = new Point(105, 189);
+            txtTelefon.Location = new Point(98, 209);
             txtTelefon.Margin = new Padding(3, 4, 3, 4);
             txtTelefon.Name = "txtTelefon";
             txtTelefon.Size = new Size(175, 27);
@@ -129,7 +135,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(105, 155);
+            txtEmail.Location = new Point(98, 175);
             txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(175, 27);
@@ -137,7 +143,7 @@
             // 
             // txtTckn
             // 
-            txtTckn.Location = new Point(105, 120);
+            txtTckn.Location = new Point(98, 140);
             txtTckn.Margin = new Padding(3, 4, 3, 4);
             txtTckn.Name = "txtTckn";
             txtTckn.Size = new Size(175, 27);
@@ -145,7 +151,7 @@
             // 
             // txtSoyad
             // 
-            txtSoyad.Location = new Point(105, 51);
+            txtSoyad.Location = new Point(98, 71);
             txtSoyad.Margin = new Padding(3, 4, 3, 4);
             txtSoyad.Name = "txtSoyad";
             txtSoyad.Size = new Size(175, 27);
@@ -153,7 +159,7 @@
             // 
             // txtAd
             // 
-            txtAd.Location = new Point(105, 16);
+            txtAd.Location = new Point(98, 36);
             txtAd.Margin = new Padding(3, 4, 3, 4);
             txtAd.Name = "txtAd";
             txtAd.Size = new Size(175, 27);
@@ -162,7 +168,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(47, 197);
+            label6.Location = new Point(40, 217);
             label6.Name = "label6";
             label6.Size = new Size(58, 20);
             label6.TabIndex = 10;
@@ -171,7 +177,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(57, 163);
+            label5.Location = new Point(50, 183);
             label5.Name = "label5";
             label5.Size = new Size(46, 20);
             label5.TabIndex = 11;
@@ -180,7 +186,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(9, 93);
+            label3.Location = new Point(2, 113);
             label3.Name = "label3";
             label3.Size = new Size(98, 20);
             label3.TabIndex = 12;
@@ -189,7 +195,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(57, 128);
+            label4.Location = new Point(50, 148);
             label4.Name = "label4";
             label4.Size = new Size(45, 20);
             label4.TabIndex = 13;
@@ -198,7 +204,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(54, 59);
+            label2.Location = new Point(47, 79);
             label2.Name = "label2";
             label2.Size = new Size(50, 20);
             label2.TabIndex = 14;
@@ -207,7 +213,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(73, 24);
+            label1.Location = new Point(66, 44);
             label1.Name = "label1";
             label1.Size = new Size(28, 20);
             label1.TabIndex = 15;
@@ -215,7 +221,7 @@
             // 
             // pbAvatar
             // 
-            pbAvatar.Location = new Point(105, 228);
+            pbAvatar.Location = new Point(98, 248);
             pbAvatar.Margin = new Padding(3, 4, 3, 4);
             pbAvatar.Name = "pbAvatar";
             pbAvatar.Size = new Size(176, 136);
@@ -227,7 +233,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(39, 344);
+            label7.Location = new Point(32, 364);
             label7.Name = "label7";
             label7.Size = new Size(66, 20);
             label7.TabIndex = 10;
@@ -237,11 +243,48 @@
             // 
             dosyaAc.FileName = "dosya";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { dosyaİşlemleriToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(480, 28);
+            menuStrip1.TabIndex = 25;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // dosyaİşlemleriToolStripMenuItem
+            // 
+            dosyaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { xMLToolStripMenuItem });
+            dosyaİşlemleriToolStripMenuItem.Name = "dosyaİşlemleriToolStripMenuItem";
+            dosyaİşlemleriToolStripMenuItem.Size = new Size(124, 24);
+            dosyaİşlemleriToolStripMenuItem.Text = "Dosya İşlemleri";
+            // 
+            // xMLToolStripMenuItem
+            // 
+            xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dışarıAktarToolStripMenuItem, içeriAktarToolStripMenuItem });
+            xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
+            xMLToolStripMenuItem.Size = new Size(224, 26);
+            xMLToolStripMenuItem.Text = "XML";
+            // 
+            // dışarıAktarToolStripMenuItem
+            // 
+            dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
+            dışarıAktarToolStripMenuItem.Size = new Size(224, 26);
+            dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
+            // 
+            // içeriAktarToolStripMenuItem
+            // 
+            içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
+            içeriAktarToolStripMenuItem.Size = new Size(224, 26);
+            içeriAktarToolStripMenuItem.Text = "İçeri Aktar";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(480, 473);
+            Controls.Add(menuStrip1);
             Controls.Add(pbAvatar);
             Controls.Add(txtAra);
             Controls.Add(dtpDogumTarihi);
@@ -259,11 +302,14 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             cmsSil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAvatar).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,5 +337,10 @@
         private ToolStripMenuItem düzenleToolStripMenuItem;
         private ToolStripMenuItem silToolStripMenuItem;
         private OpenFileDialog dosyaAc;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem dosyaİşlemleriToolStripMenuItem;
+        private ToolStripMenuItem xMLToolStripMenuItem;
+        private ToolStripMenuItem dışarıAktarToolStripMenuItem;
+        private ToolStripMenuItem içeriAktarToolStripMenuItem;
     }
 }
