@@ -32,6 +32,9 @@
             txtAra = new TextBox();
             dtpDogumTarihi = new DateTimePicker();
             lstKisiler = new ListBox();
+            cmsSil = new ContextMenuStrip(components);
+            düzenleToolStripMenuItem = new ToolStripMenuItem();
+            silToolStripMenuItem = new ToolStripMenuItem();
             btnKaydet = new Button();
             txtTelefon = new TextBox();
             txtEmail = new TextBox();
@@ -46,11 +49,9 @@
             label1 = new Label();
             pbAvatar = new PictureBox();
             label7 = new Label();
-            cmsSil = new ContextMenuStrip(components);
-            düzenleToolStripMenuItem = new ToolStripMenuItem();
-            silToolStripMenuItem = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)pbAvatar).BeginInit();
+            dosyaAc = new OpenFileDialog();
             cmsSil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAvatar).BeginInit();
             SuspendLayout();
             // 
             // txtAra
@@ -76,6 +77,7 @@
             // 
             // lstKisiler
             // 
+            lstKisiler.ContextMenuStrip = cmsSil;
             lstKisiler.FormattingEnabled = true;
             lstKisiler.ItemHeight = 20;
             lstKisiler.Location = new Point(288, 56);
@@ -84,6 +86,27 @@
             lstKisiler.Size = new Size(175, 384);
             lstKisiler.TabIndex = 22;
             lstKisiler.SelectedIndexChanged += lstKisiler_SelectedIndexChanged;
+            // 
+            // cmsSil
+            // 
+            cmsSil.ImageScalingSize = new Size(20, 20);
+            cmsSil.Items.AddRange(new ToolStripItem[] { düzenleToolStripMenuItem });
+            cmsSil.Name = "cmsSil";
+            cmsSil.Size = new Size(133, 28);
+            // 
+            // düzenleToolStripMenuItem
+            // 
+            düzenleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { silToolStripMenuItem });
+            düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
+            düzenleToolStripMenuItem.Size = new Size(132, 24);
+            düzenleToolStripMenuItem.Text = "Düzenle";
+            // 
+            // silToolStripMenuItem
+            // 
+            silToolStripMenuItem.Name = "silToolStripMenuItem";
+            silToolStripMenuItem.Size = new Size(108, 26);
+            silToolStripMenuItem.Text = "Sil";
+            silToolStripMenuItem.Click += silToolStripMenuItem_Click;
             // 
             // btnKaydet
             // 
@@ -199,6 +222,7 @@
             pbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             pbAvatar.TabIndex = 24;
             pbAvatar.TabStop = false;
+            pbAvatar.Click += pbAvatar_Click;
             // 
             // label7
             // 
@@ -209,26 +233,9 @@
             label7.TabIndex = 10;
             label7.Text = "Fotoğraf";
             // 
-            // cmsSil
+            // dosyaAc
             // 
-            cmsSil.ImageScalingSize = new Size(20, 20);
-            cmsSil.Items.AddRange(new ToolStripItem[] { düzenleToolStripMenuItem });
-            cmsSil.Name = "cmsSil";
-            cmsSil.Size = new Size(133, 28);
-            // 
-            // düzenleToolStripMenuItem
-            // 
-            düzenleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { silToolStripMenuItem });
-            düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            düzenleToolStripMenuItem.Size = new Size(132, 24);
-            düzenleToolStripMenuItem.Text = "Düzenle";
-            // 
-            // silToolStripMenuItem
-            // 
-            silToolStripMenuItem.Name = "silToolStripMenuItem";
-            silToolStripMenuItem.Size = new Size(224, 26);
-            silToolStripMenuItem.Text = "Sil";
-            silToolStripMenuItem.Click += silToolStripMenuItem_Click;
+            dosyaAc.FileName = "dosya";
             // 
             // Form1
             // 
@@ -255,8 +262,8 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pbAvatar).EndInit();
             cmsSil.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbAvatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,5 +290,6 @@
         private ContextMenuStrip cmsSil;
         private ToolStripMenuItem düzenleToolStripMenuItem;
         private ToolStripMenuItem silToolStripMenuItem;
+        private OpenFileDialog dosyaAc;
     }
 }

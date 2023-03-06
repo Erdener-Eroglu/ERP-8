@@ -11,50 +11,56 @@ namespace BinarySerialization
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             if (_seciliKisi == null)
-            {
                 try
                 {
-                    Kisi yeniKisi = new Kisi()
+                    //Kisi kisi = new Kisi();
+                    //kisi.Ad = txtAd.Text;
+                    //kisi.Soyad = txtSoyad.Text;
+                    //kisi.Tckn = txtTckn.Text;
+                    //kisi.DogumTarihi = dtpDogumTarihi.Value;
+                    //kisi.Telefon = txtTelefon.Text;
+                    //kisi.Email = txtEmail.Text;
+                    Kisi yeniKisi = new Kisi() //Object Initializer
                     {
                         Ad = txtAd.Text,
                         Soyad = txtSoyad.Text,
+                        Tckn = txtTckn.Text,
                         DogumTarihi = dtpDogumTarihi.Value,
                         Eposta = txtEmail.Text,
-                        Telefon = txtTelefon.Text,
-                        Tckn = txtTckn.Text
+                        Telefon = txtTelefon.Text
                     };
+
+                    //lstKisiler.DisplayMember = "Ad";
+                    //lstKisiler.Items.Add(yeniKisi);
                     _kisiler.Add(yeniKisi);
                     lstKisiler.DataSource = _kisiler;
                     FormuTemizle();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Bir hata Oluþtu! {ex.Message}");
+                    MessageBox.Show($"Bir Hata Oluþtu! {ex.Message}");
                 }
-            }
             else
             {
+                //Güncelleme iþlemi
                 try
                 {
                     _seciliKisi.Ad = txtAd.Text;
                     _seciliKisi.Soyad = txtSoyad.Text;
+                    _seciliKisi.Tckn = txtTckn.Text;
                     _seciliKisi.DogumTarihi = dtpDogumTarihi.Value;
                     _seciliKisi.Eposta = txtEmail.Text;
                     _seciliKisi.Telefon = txtTelefon.Text;
-                    _seciliKisi.Tckn = txtTckn.Text;
+                    FormuTemizle();
+                    btnKaydet.Text = "Kaydet";
                     _seciliKisi = null;
                     lstKisiler.DataSource = null;
                     lstKisiler.DataSource = _kisiler;
-                    lstKisiler.SelectedItem = null;
-                    FormuTemizle();
-                    btnKaydet.Text = "Kaydet";
-
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Bir hata Oluþtu! {ex.Message}");
+                    MessageBox.Show($"Bir Hata Oluþtu! {ex.Message}");
                 }
-
             }
         }
         public void FormuTemizle()
@@ -95,9 +101,10 @@ namespace BinarySerialization
             txtAd.Text = _seciliKisi.Ad;
             txtSoyad.Text = _seciliKisi.Soyad;
             txtTckn.Text = _seciliKisi.Tckn;
-            txtEmail.Text = _seciliKisi.Eposta;
             txtTelefon.Text = _seciliKisi.Telefon;
+            txtEmail.Text = _seciliKisi.Eposta;
             dtpDogumTarihi.Value = _seciliKisi.DogumTarihi;
+
             btnKaydet.Text = "Güncelle";
         }
 
@@ -126,6 +133,15 @@ namespace BinarySerialization
                 || item.Tckn.ToLower().StartsWith(arama)).ToList();
             lstKisiler.DataSource = null;
             lstKisiler.DataSource = sonuc;
+        }
+
+        private void pbAvatar_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Bir fotoðraf dosyasý seçiniz";
+            dosyaAc.Filter = "JPG Dosyalarý(*.jpg)|*.jpg|PNG Dosyalarý(*.png)|(*.png)";
+            dosyaAc.FileName = string.Empty;
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.ShowDialog();
         }
     }
 }
