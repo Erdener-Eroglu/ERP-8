@@ -1,4 +1,7 @@
-﻿namespace BinarySerialization
+﻿using System.Xml;
+using System.Xml.Serialization;
+
+namespace BinarySerialization
 {
     public partial class Form1 : Form
     {
@@ -162,6 +165,48 @@
                 fileStream.Dispose();
                 //pbAvatar.Image = Image.FromStream(_memoryStream);
                 pbAvatar.Image = new Bitmap(_memoryStream);
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //XML
+            dosyaKaydet.Title = "Kişileri XML olarak kaydet";
+            dosyaKaydet.Filter = "XML Dosyalar(*xml)|*xml";
+            dosyaKaydet.FileName = "Kişiler.xml";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
+                TextWriter textWriter = new StreamWriter(dosyaKaydet.FileName);
+                serializer.Serialize(textWriter, _kisiler);
+                textWriter.Close();
+                textWriter.Dispose();
+                MessageBox.Show($"XML dışarı aktarma işlemi başarılı: {dosyaKaydet.FileName}");
+            }
+        }
+
+        private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Kişileri XML olarak kaydet";
+            dosyaAc.Filter = "XML Dosyalar(*xml)|*xml";
+            dosyaAc.FileName = "Kişiler.xml";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if(dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                XmlSerializer serializer = new XmlSerializer (typeof(List<Kisi>));
+                XmlReader textReader = new XmlTextReader(dosyaAc.FileName);
+                if(serializer.CanDeserialize(textReader)) 
+                {
+                    _kisiler = serializer.Deserialize(textReader) as List<Kisi>;
+                    MessageBox.Show($"{_kisiler.Count} kisi sisteme başarıyla eklendi");
+                    lstKisiler.DataSource = null;
+                    lstKisiler.DataSource = _kisiler;
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen doğru xml dosyasını seçin");
+                }
             }
         }
     }

@@ -55,6 +55,7 @@
             xMLToolStripMenuItem = new ToolStripMenuItem();
             dışarıAktarToolStripMenuItem = new ToolStripMenuItem();
             içeriAktarToolStripMenuItem = new ToolStripMenuItem();
+            dosyaKaydet = new SaveFileDialog();
             cmsSil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAvatar).BeginInit();
             menuStrip1.SuspendLayout();
@@ -258,26 +259,28 @@
             dosyaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { xMLToolStripMenuItem });
             dosyaİşlemleriToolStripMenuItem.Name = "dosyaİşlemleriToolStripMenuItem";
             dosyaİşlemleriToolStripMenuItem.Size = new Size(124, 24);
-            dosyaİşlemleriToolStripMenuItem.Text = "Dosya İşlemleri";
+            dosyaİşlemleriToolStripMenuItem.Text = "&Dosya İşlemleri";
             // 
             // xMLToolStripMenuItem
             // 
             xMLToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dışarıAktarToolStripMenuItem, içeriAktarToolStripMenuItem });
             xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
             xMLToolStripMenuItem.Size = new Size(224, 26);
-            xMLToolStripMenuItem.Text = "XML";
+            xMLToolStripMenuItem.Text = "X&ML";
             // 
             // dışarıAktarToolStripMenuItem
             // 
             dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
             dışarıAktarToolStripMenuItem.Size = new Size(224, 26);
-            dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
+            dışarıAktarToolStripMenuItem.Text = "&Dışarı Aktar";
+            dışarıAktarToolStripMenuItem.Click += dışarıAktarToolStripMenuItem_Click;
             // 
             // içeriAktarToolStripMenuItem
             // 
             içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
             içeriAktarToolStripMenuItem.Size = new Size(224, 26);
-            içeriAktarToolStripMenuItem.Text = "İçeri Aktar";
+            içeriAktarToolStripMenuItem.Text = "&İçeri Aktar";
+            içeriAktarToolStripMenuItem.Click += içeriAktarToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -342,5 +345,6 @@
         private ToolStripMenuItem xMLToolStripMenuItem;
         private ToolStripMenuItem dışarıAktarToolStripMenuItem;
         private ToolStripMenuItem içeriAktarToolStripMenuItem;
+        private SaveFileDialog dosyaKaydet;
     }
 }
