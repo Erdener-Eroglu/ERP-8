@@ -13,8 +13,8 @@ public class SingletonDeneme
 
     public static SingletonDeneme GetInstance()
     {
-       // return _singletonDeneme ?? (_singletonDeneme = new SingletonDeneme());
-        return _singletonDeneme ??= new SingletonDeneme();
+       // return _singletonDeneme ?? (_singletonDeneme = new SingletonDeneme()); 
+        return _singletonDeneme ??= new SingletonDeneme(); //?? operatörü null kontrolünü if komutu yazmadan yapar.
         //if (_singletonDeneme == null)
         //    _singletonDeneme = new SingletonDeneme();
         //return _singletonDeneme;
