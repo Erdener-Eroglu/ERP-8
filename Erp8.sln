@@ -87,9 +87,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitapciCozum", "KitapciCozu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitapciCozum.Lib", "KitapciCozum.Lib\KitapciCozum.Lib.csproj", "{ED197209-846C-4010-AB89-2458B03DD9C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AracKiralama", "AracKiralama\AracKiralama.csproj", "{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AracKiralama", "AracKiralama\AracKiralama.csproj", "{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AracKiralama.Lib", "AracKiralama.Lib\AracKiralama.Lib.csproj", "{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AracKiralama.Lib", "AracKiralama.Lib\AracKiralama.Lib.csproj", "{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11.Gün", "11.Gün", "{39F5FEDA-563F-45CF-871B-0D6F4AF774CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatikNesneler", "StatikNesneler\StatikNesneler.csproj", "{33F8C2A9-983A-4E99-A2E3-89B39F947E9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -233,6 +237,10 @@ Global
 		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F8C2A9-983A-4E99-A2E3-89B39F947E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F8C2A9-983A-4E99-A2E3-89B39F947E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F8C2A9-983A-4E99-A2E3-89B39F947E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F8C2A9-983A-4E99-A2E3-89B39F947E9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -272,6 +280,7 @@ Global
 		{ED197209-846C-4010-AB89-2458B03DD9C9} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
 		{ABDA949E-13F4-4161-BFD6-B13B99C1C5D3} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
 		{1752B5FA-7B6D-4601-A3A0-AD48674C0DE9} = {888ED1A9-4FF8-4AA5-8CFB-C0E0A3A54364}
+		{33F8C2A9-983A-4E99-A2E3-89B39F947E9E} = {39F5FEDA-563F-45CF-871B-0D6F4AF774CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {741FDE33-336B-4F1B-B493-E88430E95A77}
