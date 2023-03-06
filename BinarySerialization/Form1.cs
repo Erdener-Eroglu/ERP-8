@@ -1,4 +1,4 @@
-namespace BinarySerialization
+ï»¿namespace BinarySerialization
 {
     public partial class Form1 : Form
     {
@@ -13,13 +13,6 @@ namespace BinarySerialization
             if (_seciliKisi == null)
                 try
                 {
-                    //Kisi kisi = new Kisi();
-                    //kisi.Ad = txtAd.Text;
-                    //kisi.Soyad = txtSoyad.Text;
-                    //kisi.Tckn = txtTckn.Text;
-                    //kisi.DogumTarihi = dtpDogumTarihi.Value;
-                    //kisi.Telefon = txtTelefon.Text;
-                    //kisi.Email = txtEmail.Text;
                     Kisi yeniKisi = new Kisi() //Object Initializer
                     {
                         Ad = txtAd.Text,
@@ -30,19 +23,17 @@ namespace BinarySerialization
                         Telefon = txtTelefon.Text
                     };
 
-                    //lstKisiler.DisplayMember = "Ad";
-                    //lstKisiler.Items.Add(yeniKisi);
                     _kisiler.Add(yeniKisi);
                     lstKisiler.DataSource = _kisiler;
                     FormuTemizle();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Bir Hata Oluþtu! {ex.Message}");
+                    MessageBox.Show($"Bir Hata OluÃ¾tu! {ex.Message}");
                 }
             else
             {
-                //Güncelleme iþlemi
+                //GÃ¼ncelleme iÃ¾lemi
                 try
                 {
                     _seciliKisi.Ad = txtAd.Text;
@@ -59,7 +50,7 @@ namespace BinarySerialization
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Bir Hata Oluþtu! {ex.Message}");
+                    MessageBox.Show($"Bir Hata OluÃ¾tu! {ex.Message}");
                 }
             }
         }
@@ -105,23 +96,26 @@ namespace BinarySerialization
             txtEmail.Text = _seciliKisi.Eposta;
             dtpDogumTarihi.Value = _seciliKisi.DogumTarihi;
 
-            btnKaydet.Text = "Güncelle";
+            btnKaydet.Text = "GÃ¼ncelle";
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (lstKisiler.SelectedItem == null) return;
-            _seciliKisi = lstKisiler.SelectedItem as Kisi;
-            DialogResult result = MessageBox.Show($"{_seciliKisi.Ad} {_seciliKisi.Soyad} kiþisini silmek istiyor musunuz)",
-                "Silme Onayý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (lstKisiler.SelectedItem == null)
             {
-                _kisiler.Remove(_seciliKisi);
-                lstKisiler.DataSource = _kisiler;
-                lstKisiler.DataSource = null;
-                lstKisiler.DataSource = _kisiler;
-                FormuTemizle();
+                _seciliKisi = null;
+                return;
             }
+
+            _seciliKisi = lstKisiler.SelectedItem as Kisi;
+            txtAd.Text = _seciliKisi.Ad;
+            txtSoyad.Text = _seciliKisi.Soyad;
+            txtTckn.Text = _seciliKisi.Tckn;
+            txtTelefon.Text = _seciliKisi.Telefon;
+            txtEmail.Text = _seciliKisi.Eposta;
+            dtpDogumTarihi.Value = _seciliKisi.DogumTarihi;
+
+            btnKaydet.Text = "GÃ¼ncelle";
         }
 
         private void txtAra_KeyUp(object sender, KeyEventArgs e)
@@ -137,8 +131,8 @@ namespace BinarySerialization
 
         private void pbAvatar_Click(object sender, EventArgs e)
         {
-            dosyaAc.Title = "Bir fotoðraf dosyasý seçiniz";
-            dosyaAc.Filter = "JPG Dosyalarý(*.jpg)|*.jpg|PNG Dosyalarý(*.png)|(*.png)";
+            dosyaAc.Title = "Bir fotoÄŸraf dosyasÄ± seÃ§iniz";
+            dosyaAc.Filter = "JPG DosyalarÄ±(*.jpg)|*.jpg|PNG DosyalarÄ±(*.png)|(*.png)";
             dosyaAc.FileName = string.Empty;
             dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             dosyaAc.ShowDialog();
