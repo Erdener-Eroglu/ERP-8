@@ -13,9 +13,11 @@ public class SingletonDeneme
 
     public static SingletonDeneme GetInstance()
     {
-        if (_singletonDeneme == null)
-            _singletonDeneme = new SingletonDeneme();
-        return _singletonDeneme;
+       // return _singletonDeneme ?? (_singletonDeneme = new SingletonDeneme());
+        return _singletonDeneme ??= new SingletonDeneme();
+        //if (_singletonDeneme == null)
+        //    _singletonDeneme = new SingletonDeneme();
+        //return _singletonDeneme;
     }
     public static SingletonDeneme Instance
     {
