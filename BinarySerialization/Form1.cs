@@ -226,7 +226,6 @@ namespace BinarySerialization
                 writer.Dispose();
             }
         }
-
         private void içeriAktarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             dosyaAc.Title = "Kişileri JSON olarak kaydet";
