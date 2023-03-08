@@ -1,4 +1,6 @@
-﻿using AracEnvanter.Models;
+﻿using AracEnvanter.Data;
+using AracEnvanter.Helpers;
+using AracEnvanter.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,14 +19,15 @@ namespace AracEnvanter.Forms
         {
             InitializeComponent();
         }
-        public List<Marka> Markalar { get; set; } = new();
-        public List<Model> Liste { get; set; } = new();
+        //public List<Marka> Markalar { get; set; } = new();
+        //public List<Model> Liste { get; set; } = new();
+        public EnvanterContext DataContext { get; set; }
 
         private void ModelForm_Load(object sender, EventArgs e)
         {
             cmbKasaTipi.DataSource = Enum.GetNames(typeof(KasaTipleri));
-            cmbMarka.DataSource = Markalar;
-            lstListe.DataSource = Liste;
+            cmbMarka.DataSource = DataContext.Markalar;
+            lstListe.DataSource = DataContext.Modeller;
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -37,9 +40,10 @@ namespace AracEnvanter.Forms
                     KasaTipi = (KasaTipleri)Enum.Parse(typeof(KasaTipleri), cmbKasaTipi.SelectedItem.ToString()),
                     Marka = (Marka)cmbMarka.SelectedItem
                 };
-                Liste.Add(model);
+                DataContext.Modeller.Add(model);
                 lstListe.DataSource = null;
-                lstListe.DataSource = Liste;
+                lstListe.DataSource = DataContext.Modeller;
+                DataHelper.Save(DataContext);
 
             }
             catch (Exception ex)
@@ -58,7 +62,8 @@ namespace AracEnvanter.Forms
                 model.KasaTipi = (KasaTipleri)Enum.Parse(typeof(KasaTipleri), cmbKasaTipi.SelectedItem.ToString());
                 model.Marka = (Marka)cmbMarka.SelectedItem;
                 lstListe.DataSource = null;
-                lstListe.DataSource = Liste;
+                lstListe.DataSource = DataContext.Modeller;
+                DataHelper.Save(DataContext);
 
             }
             catch (Exception ex)

@@ -1,4 +1,6 @@
-﻿using AracEnvanter.Models;
+﻿using AracEnvanter.Data;
+using AracEnvanter.Helpers;
+using AracEnvanter.Models;
 namespace AracEnvanter.Forms;
 
 public partial class MarkaForm : Form
@@ -7,7 +9,8 @@ public partial class MarkaForm : Form
     {
         InitializeComponent();
     }
-    public List<Marka> Liste { get; set; } = new List<Marka>();
+    //public List<Marka> Liste { get; set; } = new List<Marka>();
+    public EnvanterContext DataContext { get; set; }
     private void lstListe_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (lstListe.SelectedItem == null)
@@ -35,9 +38,10 @@ public partial class MarkaForm : Form
             {
                 marka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
             }
-            Liste.Add(marka);
+            DataContext.Markalar.Add(marka);
             lstListe.DataSource = null;
-            lstListe.DataSource = Liste;
+            lstListe.DataSource = DataContext.Markalar;
+            DataHelper.Save(DataContext);
         }
         catch (Exception ex)
         {
@@ -73,7 +77,8 @@ public partial class MarkaForm : Form
                 seciliMarka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
             }
             lstListe.DataSource = null;
-            lstListe.DataSource = Liste;
+            lstListe.DataSource = DataContext.Markalar;
+            DataHelper.Save(DataContext);
         }
         catch (Exception ex)
         {
@@ -83,6 +88,6 @@ public partial class MarkaForm : Form
 
     private void MarkaForm_Load(object sender, EventArgs e)
     {
-        lstListe.DataSource = Liste;
+        lstListe.DataSource = DataContext.Markalar;
     }
 }
