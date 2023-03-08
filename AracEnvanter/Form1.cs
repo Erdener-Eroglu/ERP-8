@@ -22,8 +22,6 @@ namespace AracEnvanter
                 _markaForm.Text = "Marka Formu";
                 _markaForm.Show();
             }
-
-
         }
 
         private void modelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,7 +33,6 @@ namespace AracEnvanter
                 _modelForm.Text = "Model Formu";
                 _modelForm.Markalar = new();
                 _modelForm.Show();
-
             }
         }
     }
