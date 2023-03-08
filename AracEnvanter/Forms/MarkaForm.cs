@@ -7,7 +7,7 @@ public partial class MarkaForm : Form
     {
         InitializeComponent();
     }
-    public List<Marka> Liste {get; set;} = new List<Marka>();
+    public List<Marka> Liste { get; set; } = new List<Marka>();
     private void lstListe_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (lstListe.SelectedItem == null)
@@ -79,5 +79,10 @@ public partial class MarkaForm : Form
         {
             MessageBox.Show($"Bir hata oluştu: {ex.Message}");
         }
+    }
+
+    private void MarkaForm_Load(object sender, EventArgs e)
+    {
+        lstListe.DataSource = Liste;
     }
 }
