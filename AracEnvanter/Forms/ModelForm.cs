@@ -43,7 +43,6 @@ namespace AracEnvanter.Forms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show($"Bir hata oluştu: {ex.Message}");
             }
         }
