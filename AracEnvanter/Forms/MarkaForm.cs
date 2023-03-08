@@ -1,94 +1,83 @@
 ﻿using AracEnvanter.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+namespace AracEnvanter.Forms;
 
-namespace AracEnvanter.Forms
+public partial class MarkaForm : Form
 {
-    public partial class MarkaForm : Form
+    public MarkaForm()
     {
-        public MarkaForm()
+        InitializeComponent();
+    }
+    public List<Marka> Liste {get; set;} = new List<Marka>();
+    private void lstListe_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (lstListe.SelectedItem == null)
         {
-            InitializeComponent();
+            return;
         }
-        public List<Marka> Liste {get; set;} = new List<Marka>();
-        private void lstListe_SelectedIndexChanged(object sender, EventArgs e)
+        Marka seciliMarka = (Marka)lstListe.SelectedItem;
+        txtAd.Text = seciliMarka.Ad;
+        if (seciliMarka.Logo != null)
         {
-            if (lstListe.SelectedItem == null)
-            {
-                return;
-            }
-            Marka seciliMarka = (Marka)lstListe.SelectedItem;
-            txtAd.Text = seciliMarka.Ad;
-            if (seciliMarka.Logo != null)
-            {
-                pbResim.Image = (Image)(new ImageConverter().ConvertFrom(seciliMarka.Logo));
-            }
+            pbResim.Image = (Image)(new ImageConverter().ConvertFrom(seciliMarka.Logo));
         }
+    }
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+    private void btnKaydet_Click(object sender, EventArgs e)
+    {
+        try
         {
-            try
-            {
 
-                Marka marka = new Marka()
-                {
-                    Ad = txtAd.Text
-                };
-                if (pbResim.Image != null)
-                {
-                    marka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
-                }
-                Liste.Add(marka);
-                lstListe.DataSource = null;
-                lstListe.DataSource = Liste;
-            }
-            catch (Exception ex)
+            Marka marka = new Marka()
             {
-                MessageBox.Show($"Bir hata oluştu: {ex.Message}");
+                Ad = txtAd.Text
+            };
+            if (pbResim.Image != null)
+            {
+                marka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
             }
+            Liste.Add(marka);
+            lstListe.DataSource = null;
+            lstListe.DataSource = Liste;
         }
-
-        private void pbResim_Click(object sender, EventArgs e)
+        catch (Exception ex)
         {
-            OpenFileDialog dosyaAc = new OpenFileDialog();
-            dosyaAc.Title = "Resim Seçiniz";
-            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            dosyaAc.Multiselect = false;
-            dosyaAc.Filter = "Resim Dosyası |*.jpg;*.png;*.jpeg";
-            if (dosyaAc.ShowDialog() == DialogResult.OK)
-            {
-                pbResim.Image = Image.FromFile(dosyaAc.FileName);
-            }
+            MessageBox.Show($"Bir hata oluştu: {ex.Message}");
         }
+    }
 
-        private void btnGuncelle_Click(object sender, EventArgs e)
+    private void pbResim_Click(object sender, EventArgs e)
+    {
+        OpenFileDialog dosyaAc = new OpenFileDialog();
+        dosyaAc.Title = "Resim Seçiniz";
+        dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        dosyaAc.Multiselect = false;
+        dosyaAc.Filter = "Resim Dosyası |*.jpg;*.png;*.jpeg";
+        if (dosyaAc.ShowDialog() == DialogResult.OK)
         {
-            if (lstListe.SelectedItem == null)
+            pbResim.Image = Image.FromFile(dosyaAc.FileName);
+        }
+    }
+
+    private void btnGuncelle_Click(object sender, EventArgs e)
+    {
+        if (lstListe.SelectedItem == null)
+        {
+            return;
+        }
+        Marka seciliMarka = (Marka)lstListe.SelectedItem;
+        try
+        {
+            seciliMarka.Ad = txtAd.Text;
+            if (pbResim.Image != null)
             {
-                return;
+                seciliMarka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
             }
-            Marka seciliMarka = (Marka)lstListe.SelectedItem;
-            try
-            {
-                seciliMarka.Ad = txtAd.Text;
-                if (pbResim.Image != null)
-                {
-                    seciliMarka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
-                }
-                lstListe.DataSource = null;
-                lstListe.DataSource = Liste;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Bir hata oluştu: {ex.Message}");
-            }
+            lstListe.DataSource = null;
+            lstListe.DataSource = Liste;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Bir hata oluştu: {ex.Message}");
         }
     }
 }
