@@ -61,6 +61,7 @@
             pbResim.SizeMode = PictureBoxSizeMode.StretchImage;
             pbResim.TabIndex = 2;
             pbResim.TabStop = false;
+            pbResim.Click += pbResim_Click;
             // 
             // lstListe
             // 

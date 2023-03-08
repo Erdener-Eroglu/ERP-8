@@ -32,16 +32,31 @@ namespace AracEnvanter.Forms
                 {
                     Ad = txtAd.Text
                 };
-                if(pbResim.Image != null ) 
+                if (pbResim.Image != null)
                 {
                     marka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
                 }
-
+                _liste.Add(marka);
+                lstListe.DataSource = null;
+                lstListe.DataSource = _liste;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show($"Bir hata oluştu: {ex.Message}");
+            }
+        }
+
+        private void pbResim_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dosyaAc = new OpenFileDialog();
+            dosyaAc.Title = "Resim Seçiniz";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.Multiselect = false;
+            dosyaAc.Filter = "Resim Dosyası |*.jpg;*.png;*.jpeg";
+            if(dosyaAc.ShowDialog() == DialogResult.OK ) 
+            {
+                pbResim.Image = Image.FromFile( dosyaAc.FileName );
             }
         }
     }
