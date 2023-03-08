@@ -18,6 +18,8 @@ namespace AracEnvanter.Forms
             InitializeComponent();
         }
         public List<Marka> Markalar { get; set; } = new();
+        public List<Model> Liste { get; set; } = new();
+
         private void ModelForm_Load(object sender, EventArgs e)
         {
             cmbKasaTipi.DataSource = Enum.GetNames(typeof(KasaTipleri));

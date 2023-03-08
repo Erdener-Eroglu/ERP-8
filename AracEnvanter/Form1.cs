@@ -38,6 +38,7 @@ namespace AracEnvanter
                 _modelForm.MdiParent = this;
                 _modelForm.Text = "Model Formu";
                 _modelForm.Markalar = _dataContext.Markalar;
+                _modelForm.Liste = _dataContext.Modeller;
                 _modelForm.Show();
             }
         }

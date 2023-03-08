@@ -56,6 +56,7 @@
             btnKaydet.TabIndex = 10;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
             // 
             // lstListe
             // 
