@@ -17,7 +17,7 @@ namespace AracEnvanter.Forms
         {
             InitializeComponent();
         }
-        private List<Marka> _liste = new();
+        public List<Marka> Liste {get; set;} = new List<Marka>();
         private void lstListe_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstListe.SelectedItem == null)
@@ -45,9 +45,9 @@ namespace AracEnvanter.Forms
                 {
                     marka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
                 }
-                _liste.Add(marka);
+                Liste.Add(marka);
                 lstListe.DataSource = null;
-                lstListe.DataSource = _liste;
+                lstListe.DataSource = Liste;
             }
             catch (Exception ex)
             {
@@ -83,7 +83,7 @@ namespace AracEnvanter.Forms
                     seciliMarka.Logo = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
                 }
                 lstListe.DataSource = null;
-                lstListe.DataSource = _liste;
+                lstListe.DataSource = Liste;
             }
             catch (Exception ex)
             {
