@@ -31,6 +31,7 @@
             menuStrip1 = new MenuStrip();
             düzenToolStripMenuItem = new ToolStripMenuItem();
             markaToolStripMenuItem = new ToolStripMenuItem();
+            modelToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             // 
             // düzenToolStripMenuItem
             // 
-            düzenToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { markaToolStripMenuItem });
+            düzenToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { markaToolStripMenuItem, modelToolStripMenuItem });
             düzenToolStripMenuItem.Name = "düzenToolStripMenuItem";
             düzenToolStripMenuItem.Size = new Size(65, 24);
             düzenToolStripMenuItem.Text = "&Düzen";
@@ -57,6 +58,13 @@
             markaToolStripMenuItem.Size = new Size(224, 26);
             markaToolStripMenuItem.Text = "&Marka";
             markaToolStripMenuItem.Click += markaToolStripMenuItem_Click;
+            // 
+            // modelToolStripMenuItem
+            // 
+            modelToolStripMenuItem.Name = "modelToolStripMenuItem";
+            modelToolStripMenuItem.Size = new Size(224, 26);
+            modelToolStripMenuItem.Text = "Model";
+            modelToolStripMenuItem.Click += modelToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -80,5 +88,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem düzenToolStripMenuItem;
         private ToolStripMenuItem markaToolStripMenuItem;
+        private ToolStripMenuItem modelToolStripMenuItem;
     }
 }
