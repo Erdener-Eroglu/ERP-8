@@ -32,6 +32,7 @@
             düzenToolStripMenuItem = new ToolStripMenuItem();
             markaToolStripMenuItem = new ToolStripMenuItem();
             modelToolStripMenuItem = new ToolStripMenuItem();
+            aracToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             // 
             // düzenToolStripMenuItem
             // 
-            düzenToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { markaToolStripMenuItem, modelToolStripMenuItem });
+            düzenToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { markaToolStripMenuItem, modelToolStripMenuItem, aracToolStripMenuItem });
             düzenToolStripMenuItem.Name = "düzenToolStripMenuItem";
             düzenToolStripMenuItem.Size = new Size(65, 24);
             düzenToolStripMenuItem.Text = "&Düzen";
@@ -63,8 +64,15 @@
             // 
             modelToolStripMenuItem.Name = "modelToolStripMenuItem";
             modelToolStripMenuItem.Size = new Size(224, 26);
-            modelToolStripMenuItem.Text = "Model";
+            modelToolStripMenuItem.Text = "M&odel";
             modelToolStripMenuItem.Click += modelToolStripMenuItem_Click;
+            // 
+            // aracToolStripMenuItem
+            // 
+            aracToolStripMenuItem.Name = "aracToolStripMenuItem";
+            aracToolStripMenuItem.Size = new Size(224, 26);
+            aracToolStripMenuItem.Text = "&Arac";
+            aracToolStripMenuItem.Click += aracToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -90,5 +98,6 @@
         private ToolStripMenuItem düzenToolStripMenuItem;
         private ToolStripMenuItem markaToolStripMenuItem;
         private ToolStripMenuItem modelToolStripMenuItem;
+        private ToolStripMenuItem aracToolStripMenuItem;
     }
 }

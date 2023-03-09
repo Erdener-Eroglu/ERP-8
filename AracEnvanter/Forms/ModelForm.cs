@@ -41,6 +41,7 @@ namespace AracEnvanter.Forms
                     Marka = (Marka)cmbMarka.SelectedItem
                 };
                 DataContext.Modeller.Add(model);
+
                 lstListe.DataSource = null;
                 lstListe.DataSource = DataContext.Modeller;
                 DataHelper.Save(DataContext);
@@ -64,6 +65,7 @@ namespace AracEnvanter.Forms
                 lstListe.DataSource = null;
                 lstListe.DataSource = DataContext.Modeller;
                 DataHelper.Save(DataContext);
+                DataHelper.Save(DataContext);
 
             }
             catch (Exception ex)
@@ -71,14 +73,13 @@ namespace AracEnvanter.Forms
                 MessageBox.Show($"Bir hata oluştu: {ex.Message}");
             }
         }
-
         private void lstListe_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstListe.SelectedItem == null) return;
             Model model = (Model)lstListe.SelectedItem;
             txtAd.Text = model.Ad;
-            cmbKasaTipi.SelectedItem = Enum.GetName(typeof(KasaTipleri),model.KasaTipi);
-            cmbMarka.SelectedItem = model.Marka;
+            cmbKasaTipi.SelectedItem = Enum.GetName(typeof(KasaTipleri), model.KasaTipi);
+            cmbMarka.SelectedItem = DataContext.Markalar.Find(x => x.Id == model.Marka.Id);
         }
     }
 }

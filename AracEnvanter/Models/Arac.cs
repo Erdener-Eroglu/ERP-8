@@ -14,4 +14,9 @@ public class Arac : BaseModel
     public VitesTipleri VitesTipi { get; set; }
     public YakitTipleri YakitTipi { get; set; }
 
+    public override string ToString()
+    {
+        return $"{Model.Marka.Ad}-{Model.Ad}-{Plaka}";
+    }
+
 }
