@@ -50,6 +50,8 @@ public partial class AracForm : Form
             lstListe.DataSource = null;
             lstListe.DataSource = DataContext.Araclar;
             DataHelper.Save(DataContext);
+            this.FormCleaner(Controls);
+
         }
         catch (Exception ex)
         {
@@ -77,5 +79,7 @@ public partial class AracForm : Form
         lstListe.DataSource = null;
         lstListe.DataSource = DataContext.Araclar;
         DataHelper.Save(DataContext);
+        this.FormCleaner(Controls);
+
     }
 }

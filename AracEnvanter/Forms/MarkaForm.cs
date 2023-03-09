@@ -13,6 +13,7 @@ public partial class MarkaForm : Form
     public EnvanterContext DataContext { get; set; }
     private void lstListe_SelectedIndexChanged(object sender, EventArgs e)
     {
+
         if (lstListe.SelectedItem == null)
         {
             return;
@@ -42,6 +43,7 @@ public partial class MarkaForm : Form
             lstListe.DataSource = null;
             lstListe.DataSource = DataContext.Markalar;
             DataHelper.Save(DataContext);
+            this.FormCleaner(this.Controls);
         }
         catch (Exception ex)
         {
@@ -79,6 +81,8 @@ public partial class MarkaForm : Form
             lstListe.DataSource = null;
             lstListe.DataSource = DataContext.Markalar;
             DataHelper.Save(DataContext);
+            this.FormCleaner(Controls);
+
         }
         catch (Exception ex)
         {
