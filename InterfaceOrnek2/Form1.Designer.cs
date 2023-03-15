@@ -31,14 +31,14 @@
             rdbKare = new RadioButton();
             rdbDikdortgen = new RadioButton();
             gbIslemler = new GroupBox();
-            lblSekilAdi = new Label();
-            lblKenar1 = new Label();
-            lblKenar2 = new Label();
-            txtSekilAdi = new TextBox();
-            txtKenar1 = new TextBox();
-            txtKenar2 = new TextBox();
-            btnAlan = new Button();
             btnCevre = new Button();
+            btnAlan = new Button();
+            txtKenar2 = new TextBox();
+            txtKenar1 = new TextBox();
+            txtSekilAdi = new TextBox();
+            lblKenar2 = new Label();
+            lblKenar1 = new Label();
+            lblSekilAdi = new Label();
             gbIslemler.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             rdbKare.TabStop = true;
             rdbKare.Text = "Kare";
             rdbKare.UseVisualStyleBackColor = true;
+            rdbKare.CheckedChanged += rdbKare_CheckedChanged;
             // 
             // rdbDikdortgen
             // 
@@ -65,6 +66,7 @@
             rdbDikdortgen.TabStop = true;
             rdbDikdortgen.Text = "Dikdörtgen";
             rdbDikdortgen.UseVisualStyleBackColor = true;
+            rdbDikdortgen.CheckedChanged += rdbDikdortgen_CheckedChanged;
             // 
             // gbIslemler
             // 
@@ -83,53 +85,14 @@
             gbIslemler.TabStop = false;
             gbIslemler.Text = "İşlem Bilgileri";
             // 
-            // lblSekilAdi
+            // btnCevre
             // 
-            lblSekilAdi.AutoSize = true;
-            lblSekilAdi.Location = new Point(22, 35);
-            lblSekilAdi.Name = "lblSekilAdi";
-            lblSekilAdi.Size = new Size(75, 20);
-            lblSekilAdi.TabIndex = 0;
-            lblSekilAdi.Text = "Şeklin Adı";
-            // 
-            // lblKenar1
-            // 
-            lblKenar1.AutoSize = true;
-            lblKenar1.Location = new Point(50, 71);
-            lblKenar1.Name = "lblKenar1";
-            lblKenar1.Size = new Size(47, 20);
-            lblKenar1.TabIndex = 1;
-            lblKenar1.Text = "Kenar";
-            // 
-            // lblKenar2
-            // 
-            lblKenar2.AutoSize = true;
-            lblKenar2.Location = new Point(50, 110);
-            lblKenar2.Name = "lblKenar2";
-            lblKenar2.Size = new Size(47, 20);
-            lblKenar2.TabIndex = 2;
-            lblKenar2.Text = "Kenar";
-            // 
-            // txtSekilAdi
-            // 
-            txtSekilAdi.Location = new Point(106, 32);
-            txtSekilAdi.Name = "txtSekilAdi";
-            txtSekilAdi.Size = new Size(169, 27);
-            txtSekilAdi.TabIndex = 3;
-            // 
-            // txtKenar1
-            // 
-            txtKenar1.Location = new Point(106, 68);
-            txtKenar1.Name = "txtKenar1";
-            txtKenar1.Size = new Size(169, 27);
-            txtKenar1.TabIndex = 3;
-            // 
-            // txtKenar2
-            // 
-            txtKenar2.Location = new Point(106, 107);
-            txtKenar2.Name = "txtKenar2";
-            txtKenar2.Size = new Size(169, 27);
-            txtKenar2.TabIndex = 4;
+            btnCevre.Location = new Point(22, 206);
+            btnCevre.Name = "btnCevre";
+            btnCevre.Size = new Size(253, 29);
+            btnCevre.TabIndex = 5;
+            btnCevre.Text = "Çevre Hesapla";
+            btnCevre.UseVisualStyleBackColor = true;
             // 
             // btnAlan
             // 
@@ -140,14 +103,53 @@
             btnAlan.Text = "Alan Hesapla";
             btnAlan.UseVisualStyleBackColor = true;
             // 
-            // btnCevre
+            // txtKenar2
             // 
-            btnCevre.Location = new Point(22, 206);
-            btnCevre.Name = "btnCevre";
-            btnCevre.Size = new Size(253, 29);
-            btnCevre.TabIndex = 5;
-            btnCevre.Text = "Çevre Hesapla";
-            btnCevre.UseVisualStyleBackColor = true;
+            txtKenar2.Location = new Point(106, 107);
+            txtKenar2.Name = "txtKenar2";
+            txtKenar2.Size = new Size(169, 27);
+            txtKenar2.TabIndex = 4;
+            // 
+            // txtKenar1
+            // 
+            txtKenar1.Location = new Point(106, 68);
+            txtKenar1.Name = "txtKenar1";
+            txtKenar1.Size = new Size(169, 27);
+            txtKenar1.TabIndex = 3;
+            // 
+            // txtSekilAdi
+            // 
+            txtSekilAdi.Location = new Point(106, 32);
+            txtSekilAdi.Name = "txtSekilAdi";
+            txtSekilAdi.Size = new Size(169, 27);
+            txtSekilAdi.TabIndex = 3;
+            // 
+            // lblKenar2
+            // 
+            lblKenar2.AutoSize = true;
+            lblKenar2.Location = new Point(22, 110);
+            lblKenar2.Name = "lblKenar2";
+            lblKenar2.Size = new Size(47, 20);
+            lblKenar2.TabIndex = 2;
+            lblKenar2.Text = "Kenar";
+            // 
+            // lblKenar1
+            // 
+            lblKenar1.AutoSize = true;
+            lblKenar1.Location = new Point(22, 71);
+            lblKenar1.Name = "lblKenar1";
+            lblKenar1.Size = new Size(47, 20);
+            lblKenar1.TabIndex = 1;
+            lblKenar1.Text = "Kenar";
+            // 
+            // lblSekilAdi
+            // 
+            lblSekilAdi.AutoSize = true;
+            lblSekilAdi.Location = new Point(22, 35);
+            lblSekilAdi.Name = "lblSekilAdi";
+            lblSekilAdi.Size = new Size(75, 20);
+            lblSekilAdi.TabIndex = 0;
+            lblSekilAdi.Text = "Şeklin Adı";
             // 
             // Form1
             // 
@@ -159,6 +161,7 @@
             Controls.Add(rdbKare);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             gbIslemler.ResumeLayout(false);
             gbIslemler.PerformLayout();
             ResumeLayout(false);
