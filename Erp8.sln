@@ -109,7 +109,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "14..Gün", "14..Gün", "{63
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceOrnek1", "InterfaceOrnek1\InterfaceOrnek1.csproj", "{652E0233-7999-4062-968F-0D08254CB04C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceOrnek2", "InterfaceOrnek2\InterfaceOrnek2.csproj", "{01933463-20D5-4A2D-B0C2-22FCF108BEDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceOrnek2", "InterfaceOrnek2\InterfaceOrnek2.csproj", "{01933463-20D5-4A2D-B0C2-22FCF108BEDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceOrnek_Odeme", "InterfaceOrnek_Odeme\InterfaceOrnek_Odeme.csproj", "{5D4E59F1-E8E5-451E-8594-904DE9E61E05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -277,6 +279,10 @@ Global
 		{01933463-20D5-4A2D-B0C2-22FCF108BEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01933463-20D5-4A2D-B0C2-22FCF108BEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01933463-20D5-4A2D-B0C2-22FCF108BEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D4E59F1-E8E5-451E-8594-904DE9E61E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D4E59F1-E8E5-451E-8594-904DE9E61E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D4E59F1-E8E5-451E-8594-904DE9E61E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D4E59F1-E8E5-451E-8594-904DE9E61E05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -322,6 +328,7 @@ Global
 		{91C7E901-F4E3-403E-AD5D-EFBE25BB0629} = {A4485EB4-16C2-46DF-81BE-282598D45446}
 		{652E0233-7999-4062-968F-0D08254CB04C} = {63C053AF-58E3-48C2-A8B4-8F2995282E40}
 		{01933463-20D5-4A2D-B0C2-22FCF108BEDE} = {63C053AF-58E3-48C2-A8B4-8F2995282E40}
+		{5D4E59F1-E8E5-451E-8594-904DE9E61E05} = {63C053AF-58E3-48C2-A8B4-8F2995282E40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {741FDE33-336B-4F1B-B493-E88430E95A77}
