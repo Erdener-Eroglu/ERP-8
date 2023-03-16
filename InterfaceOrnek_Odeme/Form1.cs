@@ -84,7 +84,6 @@ namespace InterfaceOrnek_Odeme
             };
             MessageBox.Show(odeme.OdemeYap());
             gbKrediKartýTemizle();
-
         }
     }
 }

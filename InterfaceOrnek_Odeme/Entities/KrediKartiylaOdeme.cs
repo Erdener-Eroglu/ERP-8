@@ -62,6 +62,7 @@ namespace InterfaceOrnek_Odeme.Entities
                             kuraliBozanVarMi = true;
                             break;
                         }
+                        continue;
                     }
                     if (!char.IsDigit(value[i]))
                     {
