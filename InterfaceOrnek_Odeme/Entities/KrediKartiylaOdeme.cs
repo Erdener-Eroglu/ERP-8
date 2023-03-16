@@ -13,7 +13,25 @@ namespace InterfaceOrnek_Odeme.Entities
         public string KartSahibi { get; set; }
         public string KartNumarasi { get; set; }
         public byte SonKullanimAy { get; set; }
-        public byte SonKullnaimYil { get; set; }
+        private byte _sonKullanimYil;
+        public byte SonKullnaimYil 
+        { 
+            get
+            {
+                return _sonKullanimYil;
+            }
+            set
+            {
+                if(value > 22)
+                {
+                    _sonKullanimYil = value;
+                }
+                else
+                {
+                    throw new Exception("Son kullanım yılını iki haneli olacak şekilde girmeniz gerekmektedir.");
+                }
+            }
+        }
         public int CVC { get; set; }
         public decimal OdenecekTutar { get; set; }
         public string OdemeYap()
